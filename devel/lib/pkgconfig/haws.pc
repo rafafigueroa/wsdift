@@ -1,0 +1,8 @@
+prefix=/home/rafa/wsdift/devel
+
+Name: haws
+Description: Description of haws
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/rafa/wsdift/devel/lib 
+Requires: 

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "haws")
+set(haws_MAINTAINER "rafa <rfigueroa@unm.edu>")
+set(haws_DEPRECATED "")
+set(haws_VERSION "0.0.0")
+set(haws_BUILD_DEPENDS "geometry_msgs" "message_generation" "message_runtime" "roscpp" "rospy" "std_msgs")
+set(haws_RUN_DEPENDS "geometry_msgs" "message_runtime" "roscpp" "rospy" "std_msgs")
+set(haws_BUILDTOOL_DEPENDS "catkin")
