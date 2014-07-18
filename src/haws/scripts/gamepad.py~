@@ -1,0 +1,68 @@
+from array import array
+import sys
+pipe = open('/dev/input/js0','r')
+i = 1
+action = []
+spacing = 0
+
+# each bit in the char string is associated with a button's state
+buttonValues = array('c', ['\x00','\x00'])
+analogValues = array('h', [0, 0, 0, 0, 0, 0])
+analogValuesChars = array('c', ['\x00','\x00','\x00','\x00', \
+	'\x00','\x00','\x00','\x00','\x00','\x00','\x00','\x00',])
+
+while 1:
+	for character in pipe.read(1):
+		action += [character]
+		if len(action) == 8:
+			button = ord(action[7])
+			isButton = ord(action[6]) & 0b1
+			buttonState = ord(action[4])
+			
+			upperAnalog = ord(action[5])
+			upperAnalogChar = action[5]
+			lowerAnalog = ord(action[4])
+			lowerAnalogChar = action[4]
+			axis = ord(action[7])
+			
+			if isButton == 1:
+				isHighButton = button>>3
+				button = button & 7
+				buttonState = buttonState<<button
+				if isHighButton == 1:
+					mask1 = 0b11111111<<(button+1)
+					mask2 = 0b11111111>>(8 - button)
+					oldButtonMask = mask1 | mask2
+					newButtonMask = ~oldButtonMask
+					val = (oldButtonMask & ord(buttonValues[0])) | (newButtonMask & buttonState)
+					buttonValues[0] = chr(val)
+				else:
+					mask1 = 0b11111111<<(button+1)
+					mask2 = 0b11111111>>(8 - button)
+					oldButtonMask = mask1 | mask2
+					newButtonMask = ~oldButtonMask
+					val = (oldButtonMask & ord(buttonValues[1])) | (newButtonMask & buttonState)
+					buttonValues[1] = chr(val)
+			else:				
+				value = (upperAnalog << 8) | lowerAnalog
+				if (upperAnalog >> 7) == 1:
+					value = value - (2**16)
+				analogValues[axis] = value
+				analogValuesChars[2*axis] = upperAnalogChar
+				analogValuesChars[2*axis + 1] = lowerAnalogChar
+			for byte in action:
+				sys.stdout.write('%02X ' % ord(byte))
+#			for byte in analogValuesChars:
+#				sys.stdout.write('%02X ' % ord(byte))
+			sys.stdout.write('   %06d %06d %06d %06d %06d %06d' % (analogValues[0], \
+					analogValues[1], analogValues[2], analogValues[3], \
+					analogValues[4], analogValues[5]))
+			
+			sys.stdout.write('   %02X %02X' % (ord(buttonValues[0]), ord(buttonValues[1])))
+			spacing += 1
+			if spacing == 2:
+				sys.stdout.write('\n')
+				spacing = 0
+			sys.stdout.write('\n')
+			sys.stdout.flush()
+			action = []

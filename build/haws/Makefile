@@ -150,6 +150,48 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : haws/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: haws/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make haws/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : haws/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: haws/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make haws/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 haws/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
 	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : haws/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
@@ -234,6 +276,48 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+haws/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : haws/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: haws/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make haws/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : haws/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: haws/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make haws/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : haws/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: haws/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make haws/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 haws/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
 	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : haws/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
@@ -282,6 +366,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
@@ -293,6 +380,9 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"

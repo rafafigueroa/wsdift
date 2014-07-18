@@ -164,7 +164,7 @@ class SimResult:
         else:
             axarr.plot(T_plot,Y_plot)
 
-        plt.ion()
+        #plt.ion()
         plt.show()
         
     def phasePlot(self,plotStates):
@@ -187,7 +187,7 @@ class SimResult:
         
         axarr.plot(X1_plot,X2_plot)
         
-        plt.ion()
+        #plt.ion()
         plt.show()
 
 class TimeInterval:
