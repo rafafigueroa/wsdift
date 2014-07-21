@@ -1,0 +1,26 @@
+<launch>
+  <node
+    pkg="turtlesim"
+    type="turtlesim_node"
+    name="turtlesim"
+    respawn="true"
+  />
+  <node
+    pkg="joy"
+    type="joy_node"
+    name="Joy"
+    required="true"
+    launch-prefix="xterm -e"
+  />
+  <node
+    pkg="haws"
+    type="tsimjoy.py"
+    name="tsimjoy"
+  />
+  <node
+    pkg="haws"
+    type="haws_tsimjoy.py"
+    name="haws"
+    output="screen"
+  />
+</launch>

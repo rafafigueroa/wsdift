@@ -359,6 +359,90 @@ std_msgs_generate_messages_py/fast:
 	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/std_msgs_generate_messages_py.dir/build.make haws/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+# Convenience name for target.
+haws/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+.PHONY : haws/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_cpp: haws/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make haws/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+.PHONY : haws/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_lisp: haws/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+.PHONY : std_srvs_generate_messages_lisp
+
+# fast build rule for target.
+std_srvs_generate_messages_lisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make haws/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+.PHONY : std_srvs_generate_messages_lisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+.PHONY : haws/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_py: haws/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+.PHONY : std_srvs_generate_messages_py
+
+# fast build rule for target.
+std_srvs_generate_messages_py/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/std_srvs_generate_messages_py.dir/build.make haws/CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
+
+# Convenience name for target.
+haws/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
+.PHONY : haws/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+turtlesim_generate_messages_cpp: haws/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
+.PHONY : turtlesim_generate_messages_cpp
+
+# fast build rule for target.
+turtlesim_generate_messages_cpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/turtlesim_generate_messages_cpp.dir/build.make haws/CMakeFiles/turtlesim_generate_messages_cpp.dir/build
+.PHONY : turtlesim_generate_messages_cpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule
+.PHONY : haws/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+turtlesim_generate_messages_lisp: haws/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule
+.PHONY : turtlesim_generate_messages_lisp
+
+# fast build rule for target.
+turtlesim_generate_messages_lisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/turtlesim_generate_messages_lisp.dir/build.make haws/CMakeFiles/turtlesim_generate_messages_lisp.dir/build
+.PHONY : turtlesim_generate_messages_lisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/turtlesim_generate_messages_py.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/turtlesim_generate_messages_py.dir/rule
+.PHONY : haws/CMakeFiles/turtlesim_generate_messages_py.dir/rule
+
+# Convenience name for target.
+turtlesim_generate_messages_py: haws/CMakeFiles/turtlesim_generate_messages_py.dir/rule
+.PHONY : turtlesim_generate_messages_py
+
+# fast build rule for target.
+turtlesim_generate_messages_py/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/turtlesim_generate_messages_py.dir/build.make haws/CMakeFiles/turtlesim_generate_messages_py.dir/build
+.PHONY : turtlesim_generate_messages_py/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -386,7 +470,13 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... std_srvs_generate_messages_lisp"
+	@echo "... std_srvs_generate_messages_py"
 	@echo "... test"
+	@echo "... turtlesim_generate_messages_cpp"
+	@echo "... turtlesim_generate_messages_lisp"
+	@echo "... turtlesim_generate_messages_py"
 .PHONY : help
 
 

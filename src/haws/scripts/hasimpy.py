@@ -14,7 +14,7 @@ class H:
         self.q = Q #list of q
         self.states = states
 
-    def sim(self,qID,X,t0,tlim,debug_flag=False,Ts=1e-4):
+    def sim(self,qID,X,u,t0,tlim,debug_flag=False,Ts=1e-4):
         #to refers to the initial time of
         #each continuous dynamic time interval
         sr = SimResult() #Initialize class
@@ -30,24 +30,41 @@ class H:
             r=q.E.R #reset map list
             oe=q.E.OE #out edges list
             dom=q.Dom #discrete mode domain
+            avoid=q.Avoid #discrete mode avoid
             
             if DEBUG:
                 print '\n*** New Discrete State *** \n'
-                print 'f=',f,'\ng=',g,'\nr=',r,'\noe=',oe,'\ndom=',dom 
-                print 'qID=',q.qID,'\nX=',X
+                print 'f=',f,'\ng=',g,'\nr=',r,'\noe=',oe,'\ndom=',dom
+                print 'Avoid=',avoid 
+                print 'qID=',q.qID,'\nX=',X,'\nu=',u
                 print '\n*** domain check *** \n'
 
             if not dom(X):
                 errorString = 'Outside domain!'
-                print 'error!'
-                raise NameError(errorString)
-                
+                print errorString
+                #raise NameError(errorString)
+
             if DEBUG:
                 print '\n*** continuous dynamics *** \n'
                 
             #simulate continuous dynamics
-            T,Y,oID_activated_g=odeeul(f,g,X,t0,Ts)
+            T,Y,oID_activated_g,avoid_activated= \
+            odeeul(f,g,avoid,X,u,t0,Ts)
             print 'guard oID: ',oID_activated_g
+            print 'inside avoid set? ',avoid_activated
+            
+            #store this time interval
+            #in the simulation results
+            sr.newTimeInterval(T,Y)
+            
+            #when inside the avoid set, simulation stops
+            #and the information is stored in the simulation results
+            if avoid_activated:
+                sr.avoid_activated = True
+                sr.timeToAvoid = T[-1]
+                break #while loop
+            
+            
             # *** after guard is activated ***
             # prepare data for the next loop
             t0=T[-1] #reset initial time to the end of
@@ -64,20 +81,17 @@ class H:
             print 'State =',X
             q=self.q[qID_activated_g] #get new q
 
-            #store this time interval
-            #in the simulation results
-            sr.newTimeInterval(T,Y)
-
         return sr
 
 class Q:
     def  __init__(self,qID,f,E,
-                  Init=True, Dom = lambda X:True,TC=True):
+                  Init=True, Dom = lambda X:True, Avoid = lambda X:False ,TC=True):
         self.qID = qID
         self.f = f
         self.E = E
         self.Init = Init
         self.Dom = Dom
+        self.Avoid = Avoid
         self.TC = TC
 
 class E:
@@ -107,9 +121,15 @@ def guard_check(g,X):
             break
 
     return [g_activated,oID_activated_g]
+    
+def avoid_check(avoid,X):
+    'avoid returns True when inside the avoid set'
+    return avoid(X)
+    
 
 
-def odeeul(f,g,X0,t0,Ts):
+def odeeul(f,g,avoid,X0,u,t0,Ts):
+    #TODO: change constant u for function option
     X=np.array(X0)
     Y=np.array(X0)
     T=np.array([t0])
@@ -118,25 +138,35 @@ def odeeul(f,g,X0,t0,Ts):
         print 'State=',X
 
     g_activated,oID_activated_g = guard_check(g,X)
-    while not g_activated:
+    avoid_activated = avoid_check(avoid,X)
+        
+    if DEBUG:
+        print 'First checks:'
+        print '\tg_activated:',g_activated
+        print '\tavoid_activated',avoid_activated
+    
+    while not (g_activated or avoid_activated):
         #Evolve continuosly until a guard is activated
         
-        X=Ts*f(X)+X
-        print X
+        X=Ts*f(X,u)+X
+        #print X
         
         Y=np.vstack([Y,X])
         tnew = np.array([T[-1]+Ts])
         T=np.concatenate([T,tnew])
         g_activated,oID_activated_g = guard_check(g,X)
+        avoid_activated = avoid_check(avoid,X)
     
     print 'Output=',Y
-    return [T,Y,oID_activated_g]
+    return [T,Y,oID_activated_g,avoid_activated]
 
 class SimResult:
     def __init__(self):
         self.I= list()
         self.j=0
         self.timesteps=0
+        self.timeToAvoid=None
+        self.avoid_activated=False
 
     def newTimeInterval(self,T,Y):
         self.j+=1
@@ -189,7 +219,9 @@ class SimResult:
         
         plt.ion()
         plt.show()
-
+        
+ 
+        
 class TimeInterval:
     def __init__(self,T,Y,j):
         self.T=T
