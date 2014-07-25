@@ -14,9 +14,12 @@ class H:
         self.q = Q #list of q
         self.states = states
 
-    def sim(self,qID,X,u,t0,tlim,debug_flag=False,Ts=1e-4):
-        #to refers to the initial time of
+    def sim(self,qID,X,u,t0,tlim, 
+    haws_flag=False,
+    debug_flag=False,Ts=1e-4):
+        #t0 refers to the initial time of
         #each continuous dynamic time interval
+
         sr = SimResult() #Initialize class
         q = self.q[qID] #get a ref to current mode
         global DEBUG
@@ -26,6 +29,10 @@ class H:
 
             #get values from current q object
             f=q.f   #continuous dynamics func
+            #TODO:force different inputs when running haws (better?)
+            #when simulating is requested by haws with a forced input
+            if not haws_flag:
+                u=q.u
             g=q.E.G #guard list
             r=q.E.R #reset map list
             oe=q.E.OE #out edges list
@@ -48,8 +55,8 @@ class H:
                 print '\n*** continuous dynamics *** \n'
                 
             #simulate continuous dynamics
-            T,Y,oID_activated_g,avoid_activated= \
-            odeeul(f,g,avoid,X,u,t0,Ts)
+            T,Y,oID_activated_g,avoid_activated,tlim_activated= \
+            odeeul(f,u,g,avoid,X,t0,tlim,Ts)
             print 'guard oID: ',oID_activated_g
             print 'inside avoid set? ',avoid_activated
             
@@ -63,12 +70,16 @@ class H:
                 sr.avoid_activated = True
                 sr.timeToAvoid = T[-1]
                 break #while loop
-            
-            
+                
+            if tlim_activated:
+                break #while loop
+
             # *** after guard is activated ***
             # prepare data for the next loop
             t0=T[-1] #reset initial time to the end of
                      #last time interval
+                     
+            #TODO:create a "last line" function
             last_state = np.array(Y[-1])
             if DEBUG:
                 print '\n *** reset map *** \n'
@@ -84,10 +95,11 @@ class H:
         return sr
 
 class Q:
-    def  __init__(self,qID,f,E,
+    def  __init__(self,qID,f,u,E,
                   Init=True, Dom = lambda X:True, Avoid = lambda X:False ,TC=True):
         self.qID = qID
         self.f = f
+        self.u = u
         self.E = E
         self.Init = Init
         self.Dom = Dom
@@ -128,7 +140,7 @@ def avoid_check(avoid,X):
     
 
 
-def odeeul(f,g,avoid,X0,u,t0,Ts):
+def odeeul(f,u,g,avoid,X0,t0,tlim,Ts):
     #TODO: change constant u for function option
     X=np.array(X0)
     Y=np.array(X0)
@@ -139,26 +151,45 @@ def odeeul(f,g,avoid,X0,u,t0,Ts):
 
     g_activated,oID_activated_g = guard_check(g,X)
     avoid_activated = avoid_check(avoid,X)
+    tlim_activated = (t0>=tlim)
         
     if DEBUG:
         print 'First checks:'
         print '\tg_activated:',g_activated
         print '\tavoid_activated',avoid_activated
+        print '\ttlim_activated',tlim_activated
     
-    while not (g_activated or avoid_activated):
-        #Evolve continuosly until a guard is activated
+    while not (g_activated or avoid_activated or tlim_activated):
+        #Evolve continuosly until a
+        #termination condition is activated
         
         X=Ts*f(X,u)+X
         #print X
         
+        
         Y=np.vstack([Y,X])
         tnew = np.array([T[-1]+Ts])
         T=np.concatenate([T,tnew])
+        
+        #time evolved
+        #print ((tlim-tnew)/(tlim-t0))*100,\
+        #" percent complete         \r",
+        
+        print "                    ",tnew, " seconds         \r",
+        
+        #termination checks
         g_activated,oID_activated_g = guard_check(g,X)
         avoid_activated = avoid_check(avoid,X)
-    
+        tlim_activated = (tnew>=tlim)
+        
+        if DEBUG:
+            print 'Running checks:'
+            print '\tg_activated:',g_activated
+            print '\tavoid_activated',avoid_activated
+            print '\ttlim_activated',tlim_activated
+        
     print 'Output=',Y
-    return [T,Y,oID_activated_g,avoid_activated]
+    return [T,Y,oID_activated_g,avoid_activated,tlim_activated]
 
 class SimResult:
     def __init__(self):

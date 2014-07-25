@@ -57,8 +57,8 @@ def start():
         
         X0=np.array([x,y,h])
         now = rospy.get_rostime()
-        t0=0.0#now.secs
-        tlim=FUTURE#+t0
+        t0=now.secs
+        tlim=FUTURE+t0
         
         print '\n*** simulating: ***'
         print 't0=',t0,'tlim=',tlim
@@ -73,7 +73,8 @@ def start():
 
             # simulate each input combination and store the results
             simResult = \
-            racetrack.h.sim(CURVE,X0,u,t0,tlim,debug_flag = False,Ts=0.1)
+            racetrack.h.sim(CURVE,X0,u,t0,tlim, \
+            debug_flag = False,haws_flag = True, Ts=0.1)
             timeToAvoid[uID]=simResult.timeToAvoid
             avoid_activated[uID]=simResult.avoid_activated
             

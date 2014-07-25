@@ -43,7 +43,7 @@ def start():
     print '*** HAWS started ***'
     # publishing to "turtle1/cmd_vel" to control turtle1
     global pub
-    pub = rospy.Publisher('turtle1/cmd_vel', Twist,queue_size=100)
+    pub = rospy.Publisher('turtle1/cmd_vel', Twist,queue_size=50)
     # subscribed to joystick inputs on topic "joy"
     rospy.Subscriber("turtle1/pose", Pose, pose_callback)
     # starts the node
@@ -57,7 +57,7 @@ def start():
         
         X0=np.array([x,y,h])
         now = rospy.get_rostime()
-        t0=0.0#now.secs
+        t0=0#now.secs
         tlim=FUTURE#+t0
         
         print '\n*** simulating: ***'
@@ -73,7 +73,8 @@ def start():
 
             # simulate each input combination and store the results
             simResult = \
-            racetrack.h.sim(CURVE,X0,u,t0,tlim,debug_flag = False,Ts=0.1)
+            racetrack.h.sim(CURVE,X0,u,t0,tlim, \
+            debug_flag = False,haws_flag = True, Ts=0.1)
             timeToAvoid[uID]=simResult.timeToAvoid
             avoid_activated[uID]=simResult.avoid_activated
             

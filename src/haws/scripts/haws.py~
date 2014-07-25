@@ -28,7 +28,7 @@ def tags(timeToAvoid,avoid_activated,ALERT):
     
     for pID, pOption in enumerate(timeToAvoid):
         if avoid_activated[pID]:
-            p_tags[pID] = ALERT/pOption
+            p_tags[pID] = ALERT/(pOption+ALERT/10.0)
         else:
             p_tags[pID] = 0
     

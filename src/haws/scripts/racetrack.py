@@ -11,6 +11,8 @@ cos = np.cos
 pi = np.pi
 #from scipy.integrate import odeint
 
+from inspect import isfunction
+
 #logging for debug
 import logging,sys
 logging.basicConfig(stream=sys.stderr,level=logging.DEBUG)
@@ -23,10 +25,13 @@ def u0(X):
     'straight control'
     return np.array([2.0,0.0])
 
-def f0(X,u,t=0):
+def f0(X,u0,t=0):
 	'Straight Path'
-	
-	u=u0(X)
+	if isfunction(u0):
+	    u=u0(X)
+	else:
+	    u=u0
+	    
 	v=u[0]
 	w=u[1] #omega
 	
@@ -45,10 +50,13 @@ def u1(X):
     'curve control'
     return np.array([2.0,-20*pi/60.0])
     
-def f1(X,u,t=0):
+def f1(X,u1,t=0):
 	'Curved path'
-	
-	u=u1(X)
+	if isfunction(u1):
+	    u=u1(X)
+	else:
+	    u=u1
+	    
 	v=u[0]
 	w=u[1] #omega
 	
@@ -81,12 +89,20 @@ def g1(X):
 	(x<TRACK_LIMIT_X and x>0 and y<0)
 	
 def avoid(X):
-    'returns False when safe, True when inside the avoid set'
+    'True when inside the avoid set'
     x=X[0]
     y=X[1]
     h=X[2] #theta
 	
     return not (x>1 and x<10 and y>1 and y<10)
+    
+def avoid_2(X):
+    'True when inside the avoid set, for use when running pure python'
+    x=X[0]
+    y=X[1]
+    h=X[2] #theta
+	
+    return (x>5 or x<-5 or y>5 or y<-5)
     
 	
 #Identity Reset Maps
@@ -95,8 +111,8 @@ e0=E([1],[g0],[idem])
 e1=E([0],[g1],[idem])
 
 #discrete states
-q0=Q(0,f0,e0,Dom=any,Avoid=avoid) #straight
-q1=Q(1,f1,e1,Dom=any,Avoid=avoid) #curve
+q0=Q(0,f0,u0,e0,Dom=any,Avoid=avoid) #straight
+q1=Q(1,f1,u1,e1,Dom=any,Avoid=avoid) #curve
 
 #hybrid automata (continuous dynamics)
 h=H([q0,q1],1)
@@ -105,14 +121,15 @@ h=H([q0,q1],1)
 if False:
     #initial state
     X0=np.array([0.0,2.0,0.0])
-    STRAIGHT = 0 
-    CURVE = 1 
+    STRAIGHT = 0 #qID
+    CURVE = 1 #qID
 
     t0=0
-    tlim=3
+    tlim=15
     print 'simulating:'
     # with initial conditions
-    simResult = h.sim(CURVE,X0,t0,tlim,debug_flag = True)
+    qID0 = STRAIGHT
+    simResult = h.sim(qID0,X0,h.q[qID0].u,t0,tlim,debug_flag = True)
     simResult.phasePlot([0,1])
     simResult.simPlot()
 
