@@ -1,53 +1,52 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 """
-ZetCode PyQt4 tutorial 
-
-This program shows a confirmation 
-message box when we click on the close
-button of the application window. 
-
-author: Jan Bodnar
-website: zetcode.com 
-last edited: October 2011
+@author: Rafael Figueroa
 """
-
 import sys
 from PyQt4 import QtGui
 
-
 class Example(QtGui.QWidget):
-    
-    def __init__(self):
-        super(Example, self).__init__()
-        
-        self.initUI()
-        
-    def initUI(self):               
-        
-        self.setGeometry(300, 300, 250, 150)        
-        self.setWindowTitle('Message box')    
-        self.show()
-        
-    def closeEvent(self, event):
-        
-        reply = QtGui.QMessageBox.question(self, 'Message',
-            "Are you sure to quit?", QtGui.QMessageBox.Yes | 
-            QtGui.QMessageBox.No, QtGui.QMessageBox.No)
 
-        if reply == QtGui.QMessageBox.Yes:
-            event.accept()
-        else:
-            event.ignore()        
-        
-        
+    def __init__(self):
+        super(Example,self).__init__()
+        self.initUI()
+
+    def initUI(self):
+
+        title = QtGui.QLabel('Title')
+        author = QtGui.QLabel('Author')
+        review = QtGui.QLabel('Review')
+
+        titleEdit = QtGui.QLineEdit()
+        authorEdit = QtGui.QLineEdit()
+        reviewEdit = QtGui.QTextEdit()
+
+        grid = QtGui.QGridLayout()
+        grid.setSpacing(10)
+
+        grid.addWidget(title, 1, 0)
+        grid.addWidget(titleEdit, 1, 1)
+
+        grid.addWidget(author, 2, 0)
+        grid.addWidget(authorEdit, 2, 1)
+
+        grid.addWidget(review, 3, 0)
+        grid.addWidget(reviewEdit, 3, 1, 5, 1)
+        #inserted at position (3,1), spans 5 rows, 1 col
+
+        self.setLayout(grid)
+
+        self.setGeometry(300, 300, 350, 300)
+        self.setWindowTitle('Review')
+        self.show()
+
 def main():
-    
+
     app = QtGui.QApplication(sys.argv)
     ex = Example()
     sys.exit(app.exec_())
 
-
 if __name__ == '__main__':
     main()
+

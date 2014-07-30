@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import rospy
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Joy
@@ -12,7 +11,7 @@ x=None
 y=None
 h=None
 v=None
-w=None
+'w=None
 
 STRAIGHT = 0 
 CURVE = 1 
@@ -59,7 +58,7 @@ def start():
         now = rospy.get_rostime()
         t0=now.secs
         tlim=FUTURE+t0
-        
+
         print '\n*** simulating: ***'
         print 't0=',t0,'tlim=',tlim
         

@@ -111,14 +111,14 @@ e0=E([1],[g0],[idem])
 e1=E([0],[g1],[idem])
 
 #discrete states
-q0=Q(0,f0,u0,e0,Dom=any,Avoid=avoid_2) #straight
-q1=Q(1,f1,u1,e1,Dom=any,Avoid=avoid_2) #curve
+q0=Q(0,f0,u0,e0,Dom=any,Avoid=avoid) #straight
+q1=Q(1,f1,u1,e1,Dom=any,Avoid=avoid) #curve
 
 #hybrid automata (continuous dynamics)
 h=H([q0,q1],1)
 
-#commented out
-if True:
+#change to True when running it by itself
+if False:
     #initial state
     X0=np.array([0.0,2.0,0.0])
     STRAIGHT = 0 #qID

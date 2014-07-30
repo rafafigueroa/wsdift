@@ -10,6 +10,7 @@ import numpy as np
 DEBUG = False
 
 class H:
+
     def __init__(self, Q, states):
         self.q = Q #list of q
         self.states = states
@@ -95,6 +96,7 @@ class H:
         return sr
 
 class Q:
+
     def  __init__(self,qID,f,u,E,
                   Init=True, Dom = lambda X:True, Avoid = lambda X:False ,TC=True):
         self.qID = qID
@@ -217,8 +219,6 @@ class SimResult:
 
         import matplotlib.pyplot as plt
         nstates = np.size(Y_plot,1)
-        f, axarr = plt.subplots(nstates, sharex=True)
-
         if nstates>1:
             for yi in range(nstates):
                 axarr[yi].plot(T_plot, Y_plot[:,yi])
@@ -264,14 +264,5 @@ def idem(X):
     
 def tolEqual(a,b,tol=1e-2):
     return abs(a-b)<tol
-
-
-
-
-
-
-
-
-
 
 
