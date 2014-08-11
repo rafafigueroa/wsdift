@@ -1,8 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+@author: Rafael Figueroa
+"""
+
 import rospy
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Joy
 from turtlesim.msg import Pose
-
+import numpy as np
 from haws import *
 from racetrack import *
 import racetrack
@@ -11,7 +17,7 @@ x=None
 y=None
 h=None
 v=None
-'w=None
+w=None
 
 STRAIGHT = 0 
 CURVE = 1 
@@ -32,7 +38,6 @@ def pose_callback(tsim_pose):
     v=0.1
     w=0.1
     
-    #print 'x',x,'y',y,'h',h,'v',v,'w',w
 
 # Intializes everything
 def start():

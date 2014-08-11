@@ -9,7 +9,6 @@ import numpy as np
 sin = np.sin
 cos = np.cos
 pi = np.pi
-#from scipy.integrate import odeint
 
 from inspect import isfunction
 
