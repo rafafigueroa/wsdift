@@ -1,0 +1,14 @@
+<launch>
+  <node
+    pkg="joy"
+    type="joy_node"
+    name="Joy"
+    required="true"
+  />
+  <node
+    pkg="haws"
+    type="haws_tsimjoy.py"
+    name="haws_tsimjoy"
+	output="screen"
+  />
+</launch>

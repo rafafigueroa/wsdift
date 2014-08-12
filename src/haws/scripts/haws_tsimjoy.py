@@ -57,8 +57,8 @@ def start():
     while not rospy.is_shutdown():
         print "running %s"%rospy.get_rostime()
         #simulate system with different u combinations
-        uSim = inputCreateOptions([v,w])
-        
+        uSim = input_create_options([v,w])
+
         X0=np.array([x,y,h])
         now = rospy.get_rostime()
         t0=now.secs

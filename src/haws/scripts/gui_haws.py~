@@ -28,7 +28,6 @@ h = 0.0 #Theta
 v = 0.0 #Linear Velocity
 w = 0.0 #Angular Velocity (Omega)
 
-
 def pose_callback(pose):
     global x, y, h, v, w
     x = pose.x
@@ -45,8 +44,9 @@ def start():
     rospy.Subscriber('turtle1/pose', Pose, pose_callback)
     # starts the node
     rospy.init_node('gui')
-    global GUI
+
     #Qt loop instead of ROS loop
+    GUI = GUI_haws()
     GUI.run()
 
 
@@ -64,7 +64,7 @@ class GUI_haws:
         self.sim_plot_widget.setRange(QtCore.QRectF(0, 0, 10, 10))
 
         self.haws_plot_widget = pg.PlotWidget(name = 'haws')
-        self.haws_plot = self.haws_plot_widget.plot(title = 'Information Tracking')
+        self.haws_plot = haws_plot_widget.plot(title = 'Information Tracking')
 
         #Layout
         layout = QtGui.QGridLayout()
@@ -82,7 +82,7 @@ class GUI_haws:
 
     def update_gui(self):
         global x, y, h, v, w
-        print 'updating gui','x=',x
+        print 'updating gui','x',x
         self.sim_plot.setData([x], [y], pen = None, symbol = 'o')
         self.haws_plot.setData([0,1], [0,1])
         self.app.processEvents()
@@ -90,7 +90,12 @@ class GUI_haws:
     def run(self):
         self.app.exec_()
 
-GUI = GUI_haws()
+def gui_update_sim(x,y,h):
+    'updates plot with robot simulation'
+    sim_plot.setData([x, x + 0.1], [y, y+0.2])
+    haws_plot.setData([x, x + 0.1], [y, y-1])
+    pg.QtGui.QApplication.processEvents()
+    print 'updating plot'
 
 #Start Qt Loop
 if __name__ == '__main__':

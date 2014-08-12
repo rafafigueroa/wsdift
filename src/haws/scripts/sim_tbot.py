@@ -48,7 +48,7 @@ def start():
 
     global pub
     pub = rospy.Publisher('turtle1/pose', Pose, queue_size=100)
-    rospy.Subscriber("turtle1/cmd_vel", Twist, twist_callback)
+    rospy.Subscriber('turtle1/cmd_vel', Twist, twist_callback)
     # starts the node
     rospy.init_node('tsim')
     r = rospy.Rate(100)
@@ -79,7 +79,7 @@ def start():
         h = float(Xnew[2])
 
         #ROS pose format:
-        pos = Pose
+        pos = Pose()
         pos.x = x
         pos.y = y
         pos.theta = h
