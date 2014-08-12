@@ -44,7 +44,7 @@ def start():
 
     rospy.Subscriber('turtle1/pose', Pose, pose_callback)
     # starts the node
-    rospy.init_node('gui')
+    rospy.init_node('Gui')
     global GUI
     #Qt loop instead of ROS loop
     GUI.run()
@@ -61,7 +61,7 @@ class GUI_haws:
         #Plot widgets and objects
         self.sim_plot_widget = pg.PlotWidget(name = 'sim')
         self.sim_plot = self.sim_plot_widget.plot(title = 'Robot Simulation')
-        self.sim_plot_widget.setRange(QtCore.QRectF(0, 0, 10, 10))
+        self.sim_plot_widget.setRange(QtCore.QRectF(-1, -1, 4, 4))
 
         self.haws_plot_widget = pg.PlotWidget(name = 'haws')
         self.haws_plot = self.haws_plot_widget.plot(title = 'Information Tracking')
@@ -77,12 +77,12 @@ class GUI_haws:
 
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_gui)
-        self.timer.start(100.0) #50 ms
+        self.timer.start(50.0) #50 ms
 
 
     def update_gui(self):
         global x, y, h, v, w
-        print 'updating gui','x=',x
+        print 'updating gui','x=',x,'y=',y, 'h=',h,'v=',v,'w=',w
         self.sim_plot.setData([x], [y], pen = None, symbol = 'o')
         self.haws_plot.setData([0,1], [0,1])
         self.app.processEvents()

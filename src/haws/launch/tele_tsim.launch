@@ -7,8 +7,17 @@
   />
   <node
     pkg="haws"
-    type="haws_tsimjoy.py"
-    name="haws_tsimjoy"
-	output="screen"
+    type="joy2turtle.py"
+    name="Joy2Turtle"
+  />
+  <node
+	pkg="haws"
+	type="sim_tbot.py"
+	name="Sim"
+  />
+  <node
+    pkg="haws"
+    type="gui.py"
+    name="Gui"
   />
 </launch>
