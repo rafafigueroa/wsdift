@@ -9,8 +9,8 @@ Individual Files
 file      | pkg  | function
 --------- | ---  | ----------
 joy       | joy  | publishes joystick to joy
-joy2turtle| haws | map joy to turtle linear and angular velocities
-gui_haws  | haws | robot to GUI
+joy2turtle.py| haws | map joy to turtle linear and angular velocities
+gui_haws.py  | haws | robot to GUI
 
 
 
