@@ -16,9 +16,6 @@ import numpy as np
 from pyqtgraph.Qt import QtGui, QtCore
 import pyqtgraph as pg
 
-#pyqtgraph configuration
-pg.setConfigOptions(antialias = True)
-
 #global variables
 
 #robot pose and inputs
@@ -50,7 +47,7 @@ def start():
     GUI.run()
 
 
-class GUI_haws:
+class GUI_haws(object):
     def __init__(self):
         #Qt Initialization (once per application)
         self.app = QtGui.QApplication([])
@@ -79,11 +76,19 @@ class GUI_haws:
         self.timer.timeout.connect(self.update_gui)
         self.timer.start(50.0) #50 ms
 
+        self.arrow = pg.ArrowItem(angle=180, tipAngle=30, \
+                                    baseAngle=20, headLen=14, \
+                                    tailLen=None, brush=None)
+        self.arrow.setPos(0,0)
+        self.sim_plot_widget.addItem(self.arrow)
+
 
     def update_gui(self):
         global x, y, h, v, w
         print 'updating gui','x=',x,'y=',y, 'h=',h,'v=',v,'w=',w
         self.sim_plot.setData([x], [y], pen = None, symbol = 'o')
+        self.arrow.setPos(x,y)
+        self.arrow.setRotation(-np.degrees(h))
         self.haws_plot.setData([0,1], [0,1])
         self.app.processEvents()
 
