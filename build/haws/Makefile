@@ -150,6 +150,118 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/rule
+.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/rule
+
+# Convenience name for target.
+_haws_generate_messages_check_deps_Pose: haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/rule
+.PHONY : _haws_generate_messages_check_deps_Pose
+
+# fast build rule for target.
+_haws_generate_messages_check_deps_Pose/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/build
+.PHONY : _haws_generate_messages_check_deps_Pose/fast
+
+# Convenience name for target.
+haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/rule
+.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/rule
+
+# Convenience name for target.
+_haws_generate_messages_check_deps_Tags: haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/rule
+.PHONY : _haws_generate_messages_check_deps_Tags
+
+# fast build rule for target.
+_haws_generate_messages_check_deps_Tags/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/build
+.PHONY : _haws_generate_messages_check_deps_Tags/fast
+
+# Convenience name for target.
+haws/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+.PHONY : haws/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_cpp: haws/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+.PHONY : actionlib_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_generate_messages_cpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make haws/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+.PHONY : haws/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_lisp: haws/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+.PHONY : actionlib_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_generate_messages_lisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make haws/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+.PHONY : actionlib_generate_messages_lisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/actionlib_generate_messages_py.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/actionlib_generate_messages_py.dir/rule
+.PHONY : haws/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_py: haws/CMakeFiles/actionlib_generate_messages_py.dir/rule
+.PHONY : actionlib_generate_messages_py
+
+# fast build rule for target.
+actionlib_generate_messages_py/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/actionlib_generate_messages_py.dir/build.make haws/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
+
+# Convenience name for target.
+haws/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : haws/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_cpp: haws/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : actionlib_msgs_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_cpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make haws/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : haws/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_lisp: haws/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make haws/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+.PHONY : haws/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_py: haws/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+.PHONY : actionlib_msgs_generate_messages_py
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_py/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make haws/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
 	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 .PHONY : haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
@@ -190,6 +302,146 @@ geometry_msgs_generate_messages_py: haws/CMakeFiles/geometry_msgs_generate_messa
 geometry_msgs_generate_messages_py/fast:
 	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make haws/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+haws/CMakeFiles/haws_gencpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_gencpp.dir/rule
+.PHONY : haws/CMakeFiles/haws_gencpp.dir/rule
+
+# Convenience name for target.
+haws_gencpp: haws/CMakeFiles/haws_gencpp.dir/rule
+.PHONY : haws_gencpp
+
+# fast build rule for target.
+haws_gencpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/haws_gencpp.dir/build.make haws/CMakeFiles/haws_gencpp.dir/build
+.PHONY : haws_gencpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/haws_generate_messages.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_generate_messages.dir/rule
+.PHONY : haws/CMakeFiles/haws_generate_messages.dir/rule
+
+# Convenience name for target.
+haws_generate_messages: haws/CMakeFiles/haws_generate_messages.dir/rule
+.PHONY : haws_generate_messages
+
+# fast build rule for target.
+haws_generate_messages/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/haws_generate_messages.dir/build.make haws/CMakeFiles/haws_generate_messages.dir/build
+.PHONY : haws_generate_messages/fast
+
+# Convenience name for target.
+haws/CMakeFiles/haws_generate_messages_cpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_generate_messages_cpp.dir/rule
+.PHONY : haws/CMakeFiles/haws_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+haws_generate_messages_cpp: haws/CMakeFiles/haws_generate_messages_cpp.dir/rule
+.PHONY : haws_generate_messages_cpp
+
+# fast build rule for target.
+haws_generate_messages_cpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/haws_generate_messages_cpp.dir/build.make haws/CMakeFiles/haws_generate_messages_cpp.dir/build
+.PHONY : haws_generate_messages_cpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/haws_generate_messages_lisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_generate_messages_lisp.dir/rule
+.PHONY : haws/CMakeFiles/haws_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+haws_generate_messages_lisp: haws/CMakeFiles/haws_generate_messages_lisp.dir/rule
+.PHONY : haws_generate_messages_lisp
+
+# fast build rule for target.
+haws_generate_messages_lisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/haws_generate_messages_lisp.dir/build.make haws/CMakeFiles/haws_generate_messages_lisp.dir/build
+.PHONY : haws_generate_messages_lisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/haws_generate_messages_py.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_generate_messages_py.dir/rule
+.PHONY : haws/CMakeFiles/haws_generate_messages_py.dir/rule
+
+# Convenience name for target.
+haws_generate_messages_py: haws/CMakeFiles/haws_generate_messages_py.dir/rule
+.PHONY : haws_generate_messages_py
+
+# fast build rule for target.
+haws_generate_messages_py/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/haws_generate_messages_py.dir/build.make haws/CMakeFiles/haws_generate_messages_py.dir/build
+.PHONY : haws_generate_messages_py/fast
+
+# Convenience name for target.
+haws/CMakeFiles/haws_genlisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_genlisp.dir/rule
+.PHONY : haws/CMakeFiles/haws_genlisp.dir/rule
+
+# Convenience name for target.
+haws_genlisp: haws/CMakeFiles/haws_genlisp.dir/rule
+.PHONY : haws_genlisp
+
+# fast build rule for target.
+haws_genlisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/haws_genlisp.dir/build.make haws/CMakeFiles/haws_genlisp.dir/build
+.PHONY : haws_genlisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/haws_genpy.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_genpy.dir/rule
+.PHONY : haws/CMakeFiles/haws_genpy.dir/rule
+
+# Convenience name for target.
+haws_genpy: haws/CMakeFiles/haws_genpy.dir/rule
+.PHONY : haws_genpy
+
+# fast build rule for target.
+haws_genpy/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/haws_genpy.dir/build.make haws/CMakeFiles/haws_genpy.dir/build
+.PHONY : haws_genpy/fast
+
+# Convenience name for target.
+haws/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+.PHONY : haws/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_cpp: haws/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+.PHONY : nav_msgs_generate_messages_cpp
+
+# fast build rule for target.
+nav_msgs_generate_messages_cpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make haws/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
+.PHONY : nav_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+.PHONY : haws/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_lisp: haws/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+.PHONY : nav_msgs_generate_messages_lisp
+
+# fast build rule for target.
+nav_msgs_generate_messages_lisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make haws/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
+.PHONY : nav_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+.PHONY : haws/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_py: haws/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+.PHONY : nav_msgs_generate_messages_py
+
+# fast build rule for target.
+nav_msgs_generate_messages_py/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make haws/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+.PHONY : nav_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 haws/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
@@ -402,6 +654,90 @@ std_srvs_generate_messages_py/fast:
 .PHONY : std_srvs_generate_messages_py/fast
 
 # Convenience name for target.
+haws/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
+.PHONY : haws/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_cpp: haws/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
+.PHONY : tf2_msgs_generate_messages_cpp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_cpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make haws/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
+.PHONY : tf2_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+.PHONY : haws/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_lisp: haws/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+.PHONY : tf2_msgs_generate_messages_lisp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_lisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make haws/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
+.PHONY : tf2_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
+.PHONY : haws/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_py: haws/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
+.PHONY : tf2_msgs_generate_messages_py
+
+# fast build rule for target.
+tf2_msgs_generate_messages_py/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make haws/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
+.PHONY : tf2_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+haws/CMakeFiles/tf_generate_messages_cpp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/tf_generate_messages_cpp.dir/rule
+.PHONY : haws/CMakeFiles/tf_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_cpp: haws/CMakeFiles/tf_generate_messages_cpp.dir/rule
+.PHONY : tf_generate_messages_cpp
+
+# fast build rule for target.
+tf_generate_messages_cpp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/tf_generate_messages_cpp.dir/build.make haws/CMakeFiles/tf_generate_messages_cpp.dir/build
+.PHONY : tf_generate_messages_cpp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/tf_generate_messages_lisp.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/tf_generate_messages_lisp.dir/rule
+.PHONY : haws/CMakeFiles/tf_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_lisp: haws/CMakeFiles/tf_generate_messages_lisp.dir/rule
+.PHONY : tf_generate_messages_lisp
+
+# fast build rule for target.
+tf_generate_messages_lisp/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/tf_generate_messages_lisp.dir/build.make haws/CMakeFiles/tf_generate_messages_lisp.dir/build
+.PHONY : tf_generate_messages_lisp/fast
+
+# Convenience name for target.
+haws/CMakeFiles/tf_generate_messages_py.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/tf_generate_messages_py.dir/rule
+.PHONY : haws/CMakeFiles/tf_generate_messages_py.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_py: haws/CMakeFiles/tf_generate_messages_py.dir/rule
+.PHONY : tf_generate_messages_py
+
+# fast build rule for target.
+tf_generate_messages_py/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/tf_generate_messages_py.dir/build.make haws/CMakeFiles/tf_generate_messages_py.dir/build
+.PHONY : tf_generate_messages_py/fast
+
+# Convenience name for target.
 haws/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule:
 	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
 .PHONY : haws/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
@@ -449,14 +785,32 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... _haws_generate_messages_check_deps_Pose"
+	@echo "... _haws_generate_messages_check_deps_Tags"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... actionlib_generate_messages_lisp"
+	@echo "... actionlib_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... edit_cache"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... haws_gencpp"
+	@echo "... haws_generate_messages"
+	@echo "... haws_generate_messages_cpp"
+	@echo "... haws_generate_messages_lisp"
+	@echo "... haws_generate_messages_py"
+	@echo "... haws_genlisp"
+	@echo "... haws_genpy"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... nav_msgs_generate_messages_cpp"
+	@echo "... nav_msgs_generate_messages_lisp"
+	@echo "... nav_msgs_generate_messages_py"
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
@@ -474,6 +828,12 @@ help:
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_py"
 	@echo "... test"
+	@echo "... tf2_msgs_generate_messages_cpp"
+	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... tf_generate_messages_cpp"
+	@echo "... tf_generate_messages_lisp"
+	@echo "... tf_generate_messages_py"
 	@echo "... turtlesim_generate_messages_cpp"
 	@echo "... turtlesim_generate_messages_lisp"
 	@echo "... turtlesim_generate_messages_py"

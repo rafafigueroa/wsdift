@@ -3,6 +3,6 @@ prefix=/home/rafa/wsdift/install
 Name: haws
 Description: Description of haws
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/rafa/wsdift/install/include
 Libs: -L/home/rafa/wsdift/install/lib 
-Requires: 
+Requires: rospy std_msgs message_runtime tf

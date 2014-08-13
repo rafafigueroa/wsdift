@@ -9,7 +9,10 @@ like sim_tbot.py
 import rospy
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Joy
-from turtlesim.msg import Pose
+from geometry_msgs.msg import PoseStamped
+from geometry_msgs.msg import Quaternion
+from tf.transformations import euler_from_quaternion
+
 
 #Python imports
 import numpy as np
@@ -22,24 +25,25 @@ import pyqtgraph as pg
 x = 0.0
 y = 0.0
 h = 0.0 #Theta
-v = 0.0 #Linear Velocity
-w = 0.0 #Angular Velocity (Omega)
 
 
-def pose_callback(pose):
-    global x, y, h, v, w
-    x = pose.x
-    y = pose.y
-    h = pose.theta
-    v = pose.linear_velocity
-    w = pose.angular_velocity
+def ps_callback(ps):
+    global x, y, h
+    x = ps.pose.position.x
+    y = ps.pose.position.y
+    #PoseStamped orientation is a quaternion
+    #needs to be converted to theta (h)
+    (roll,pitch,yaw) = euler_from_quaternion([ps.pose.orientation.x,
+                                             ps.pose.orientation.y,
+                                             ps.pose.orientation.z,
+                                             ps.pose.orientation.w])
+    h = yaw
 
 def start():
     """Takes info from ROS topics and stores
     in the global variables for the GUI"""
 
-
-    rospy.Subscriber('turtle1/pose', Pose, pose_callback)
+    rospy.Subscriber('turtle1/pose', PoseStamped, ps_callback)
     # starts the node
     rospy.init_node('Gui')
     global GUI
@@ -60,22 +64,23 @@ class GUI_haws(object):
         self.sim_plot = self.sim_plot_widget.plot(title = 'Robot Simulation')
         self.sim_plot_widget.setRange(QtCore.QRectF(-1, -1, 4, 4))
 
-        self.haws_plot_widget = pg.PlotWidget(name = 'haws')
-        self.haws_plot = self.haws_plot_widget.plot(title = 'Information Tracking')
+        self.dift_plot_widget = pg.PlotWidget(name = 'dift')
+        self.dift_plot = self.dift_plot_widget.plot( \
+            title = 'Information Tracking')
 
         #Layout
         layout = QtGui.QGridLayout()
         layout.addWidget(self.sim_plot_widget,0,0)
-        layout.addWidget(self.haws_plot_widget,0,1)
+        layout.addWidget(self.dift_plot_widget,0,1)
         self.mw.setLayout(layout)
         self.mw.show()
 
         #GUI Loop timer
-
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_gui)
         self.timer.start(50.0) #50 ms
 
+        #arrow represents the current direction of a robot
         self.arrow = pg.ArrowItem(angle=180, tipAngle=30, \
                                     baseAngle=20, headLen=14, \
                                     tailLen=None, brush=None)
@@ -84,12 +89,16 @@ class GUI_haws(object):
 
 
     def update_gui(self):
-        global x, y, h, v, w
-        print 'updating gui','x=',x,'y=',y, 'h=',h,'v=',v,'w=',w
-        self.sim_plot.setData([x], [y], pen = None, symbol = 'o')
+        global x, y, h
+        print 'updating gui','x=',x,'y=',y, 'h=',h
+
+        #Robot representation in 2D
+        self.sim_plot.setData([x], [y], symbol = 'o')
         self.arrow.setPos(x,y)
         self.arrow.setRotation(-np.degrees(h))
-        self.haws_plot.setData([0,1], [0,1])
+
+        #Dift plot of different test paths
+        self.dift_plot.setData([0,1], [0,1])
         self.app.processEvents()
 
     def run(self):

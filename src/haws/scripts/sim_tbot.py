@@ -7,8 +7,7 @@
 #ROS imports
 import rospy
 from geometry_msgs.msg import Twist
-from turtlesim.msg import Pose
-
+from geometry_msgs.msg import PoseStamped
 #Python imports
 import numpy as np
 
@@ -39,7 +38,7 @@ def start():
     global pub
 
     #ROS setup
-    pub = rospy.Publisher('turtle1/pose', Pose, queue_size = 1000)
+    pub = rospy.Publisher('turtle1/pose', PoseStamped, queue_size = 1000)
     rospy.Subscriber('turtle1/cmd_vel', Twist, twist_callback)
     rospy.init_node('tsim')
     r = rospy.Rate(100)
@@ -55,16 +54,20 @@ def start():
         y = y + 0.01 * dy
         h = h + 0.01 * dh
 
-        #ROS pose format:
-        pos = Pose()
-        pos.x = x
-        pos.y = y
-        pos.theta = h
-        pos.linear_velocity = v
-        pos.angular_velocity = w
+        #ROS Pose format with Quaternions Orientation:
+        ps = PoseStamped()
+        ps.header.stamp = rospy.Time.now()
+        ps.header.frame_id = '/base_link'
+        ps.pose.position.x = x
+        ps.pose.position.y = y
+        ps.pose.position.z = 0
+        ps.pose.orientation.x = 0
+        ps.pose.orientation.y = 0
+        ps.pose.orientation.z = sin(h/2.0)
+        ps.pose.orientation.w = cos(h/2.0)
 
         #Publish message to topic
-        pub.publish(pos)
+        pub.publish(ps)
         r.sleep()
 
 if __name__ == '__main__':
