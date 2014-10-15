@@ -23,11 +23,11 @@ v = 0.0 #Linear Velocity
 w = 0.0 #Angular Velocity (Omega)
 
 
-def twist_callback(tsim_Twist):
+def tw_callback(tw):
     global v, w
 
-    v = tsim_Twist.linear.x
-    w = tsim_Twist.angular.z
+    v = tw.linear.x
+    w = tw.angular.z
 
 
 def start():
@@ -39,7 +39,7 @@ def start():
 
     #ROS setup
     pub = rospy.Publisher('turtle1/pose', PoseStamped, queue_size = 1000)
-    rospy.Subscriber('turtle1/cmd_vel', Twist, twist_callback)
+    rospy.Subscriber('turtle1/cmd_vel', Twist, tw_callback)
     rospy.init_node('tsim')
     r = rospy.Rate(100)
 

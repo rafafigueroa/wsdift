@@ -1,0 +1,28 @@
+<launch>
+  <node
+    pkg="joy"
+    type="joy_node"
+    name="Joy"
+    required="true"
+  />
+  <node
+    pkg="haws"
+    type="joy2turtle.py"
+    name="Joy2Turtle"
+  />
+  <node
+	pkg="haws"
+	type="sim_tbot.py"
+	name="Sim"
+  />
+  <node
+    pkg="haws"
+    type="gui.py"
+    name="Gui"
+  />
+  <node
+	pkg="haws"
+	type="dift.py"
+	name="Dift"
+  />
+</launch>

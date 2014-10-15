@@ -59,7 +59,11 @@ class H:
             odeeul(f,u,g,avoid,X,t0,tlim,Ts)
             print 'guard oID: ',oID_activated_g
             print 'inside avoid set? ',avoid_activated
-            
+
+            #force single row outputs to maintain general
+            #2D matrix form (I miss matlab here)
+            Y = np.array(Y, ndmin = 2)
+
             #store this time interval
             #in the simulation results
             sr.newTimeInterval(T,Y)
@@ -78,9 +82,9 @@ class H:
             # prepare data for the next loop
             t0=T[-1] #reset initial time to the end of
                      #last time interval
-                     
-            #TODO:create a "last line" function
+
             last_state = np.array(Y[-1])
+
             if DEBUG:
                 print '\n *** reset map *** \n'
                 print 'last state =',last_state
@@ -205,6 +209,14 @@ class SimResult:
         self.timesteps+=np.size(T)
         self.I.append(TimeInterval(T,Y,self.j))
 
+    def path(self):
+        Ylist = []
+        for i in self.I:
+            Ylist.append(i.Y)
+
+        return np.vstack(Ylist)
+
+
     def simPlot(self):
 
         Ylist=[]
@@ -217,7 +229,10 @@ class SimResult:
         T_plot = np.concatenate(Tlist)
 
         import matplotlib.pyplot as plt
+
         nstates = np.size(Y_plot,1)
+        f, axarr = plt.subplots(nstates, sharex=True)
+
         if nstates>1:
             for yi in range(nstates):
                 axarr[yi].plot(T_plot, Y_plot[:,yi])
@@ -264,4 +279,13 @@ def idem(X):
 def tolEqual(a,b,tol=1e-2):
     return abs(a-b)<tol
 
+def last_row(Y):
+    print 'shape', np.shape(Y)
+
+    rows = np.shape(Y)[0]
+    print 'rows',rows
+    if rows>1:
+        return Y[-1]
+    else:
+        return Y
 

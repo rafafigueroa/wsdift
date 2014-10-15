@@ -10,9 +10,8 @@ import rospy
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Joy
 from geometry_msgs.msg import PoseStamped
-from geometry_msgs.msg import Quaternion
 from tf.transformations import euler_from_quaternion
-
+from nav_msgs.msg import Path
 
 #Python imports
 import numpy as np
@@ -26,7 +25,7 @@ x = 0.0
 y = 0.0
 h = 0.0 #Theta
 
-
+#TODO:possiblegeneral
 def ps_callback(ps):
     global x, y, h
     x = ps.pose.position.x
@@ -39,11 +38,18 @@ def ps_callback(ps):
                                              ps.pose.orientation.w])
     h = yaw
 
+path_current = Path()
+def path_callback(path):
+    global path_current
+    path_current = path
+
 def start():
     """Takes info from ROS topics and stores
     in the global variables for the GUI"""
 
     rospy.Subscriber('turtle1/pose', PoseStamped, ps_callback)
+    rospy.Subscriber('paths',Path,path_callback)
+
     # starts the node
     rospy.init_node('Gui')
     global GUI
@@ -67,6 +73,7 @@ class GUI_haws(object):
         self.dift_plot_widget = pg.PlotWidget(name = 'dift')
         self.dift_plot = self.dift_plot_widget.plot( \
             title = 'Information Tracking')
+        self.dift_plot_widget.setRange(QtCore.QRectF(-1,-1,4,4))
 
         #Layout
         layout = QtGui.QGridLayout()
@@ -78,27 +85,45 @@ class GUI_haws(object):
         #GUI Loop timer
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_gui)
-        self.timer.start(50.0) #50 ms
+        self.timer.start(100.0) #50 ms
 
         #arrow represents the current direction of a robot
-        self.arrow = pg.ArrowItem(angle=180, tipAngle=30, \
+        self.arrow_sim = pg.ArrowItem(angle=180, tipAngle=30, \
                                     baseAngle=20, headLen=14, \
                                     tailLen=None, brush=None)
-        self.arrow.setPos(0,0)
-        self.sim_plot_widget.addItem(self.arrow)
+        self.arrow_dift = pg.ArrowItem(angle=180, tipAngle=30, \
+                                    baseAngle=20, headLen=14, \
+                                    tailLen=None, brush=None)
+        self.arrow_sim.setPos(0,0)
+        self.arrow_dift.setPos(0,0)
+        self.sim_plot_widget.addItem(self.arrow_sim)
+        self.dift_plot_widget.addItem(self.arrow_dift)
 
 
     def update_gui(self):
         global x, y, h
-        print 'updating gui','x=',x,'y=',y, 'h=',h
+        #print 'updating gui','x=',x,'y=',y, 'h=',h
 
         #Robot representation in 2D
         self.sim_plot.setData([x], [y], symbol = 'o')
-        self.arrow.setPos(x,y)
-        self.arrow.setRotation(-np.degrees(h))
+
+        #Arrows orientation and position
+        self.arrow_sim.setPos(x,y)
+        self.arrow_sim.setRotation(-np.degrees(h))
+        self.arrow_dift.setPos(x,y)
+        self.arrow_dift.setRotation(-np.degrees(h))
 
         #Dift plot of different test paths
-        self.dift_plot.setData([0,1], [0,1])
+        global path_current
+        x_coords=[]
+        y_coords=[]
+        for ps in path_current.poses:
+            x_coords.append(ps.pose.position.x)
+            y_coords.append(ps.pose.position.y)
+
+        self.dift_plot.setData(x_coords, y_coords, clear = True)
+
+        #Update the gui
         self.app.processEvents()
 
     def run(self):

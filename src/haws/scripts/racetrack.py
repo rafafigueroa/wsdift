@@ -19,6 +19,7 @@ logging.basicConfig(stream=sys.stderr,level=logging.DEBUG)
 from hasimpy import *
 
 TRACK_LIMIT_X = 2
+TRACK_LIMIT_Y = 1
 
 def u0(X):
     'straight control'
@@ -33,9 +34,6 @@ def f0(X,u0,t=0):
 
     v=u[0]
     w=u[1] #omega
-
-    x=X[0]
-    y=X[1]
     h=X[2] #theta
 
     dx=v*cos(h)
@@ -47,7 +45,7 @@ def f0(X,u0,t=0):
 
 def u1(X):
     'curve control'
-    return np.array([2.0,-20*pi/60.0])
+    return np.array([2.0, -4])
     
 def f1(X,u1,t=0):
     'Curved path'
@@ -76,7 +74,8 @@ def g0(X):
     y=X[1]
     h=X[2] #theta
 
-    return (x>TRACK_LIMIT_X and y>0) or (x<-TRACK_LIMIT_X and y<0)
+    return (x>TRACK_LIMIT_X and y>0) \
+           or (x<-TRACK_LIMIT_X and y<0)
 
 def g1(X):
     'Start straight'
@@ -93,16 +92,11 @@ def avoid(X):
     y=X[1]
     h=X[2] #theta
 
-    return not (x>1 and x<10 and y>1 and y<10)
-    
-def avoid_2(X):
-    'True when inside the avoid set, for use when running pure python'
-    x=X[0]
-    y=X[1]
-    h=X[2] #theta
+    return not (x> -(TRACK_LIMIT_X+1) and \
+                x< (TRACK_LIMIT_X+1) and \
+                y> -(TRACK_LIMIT_Y+1)and \
+                y< (TRACK_LIMIT_Y+1))
 
-    return (x>5 or x<-5 or y>5 or y<-5)
-    
 #Identity Reset Maps
 #edges
 e0=E([1],[g0],[idem])
@@ -115,21 +109,4 @@ q1=Q(1,f1,u1,e1,Dom=any,Avoid=avoid) #curve
 #hybrid automata (continuous dynamics)
 h=H([q0,q1],1)
 
-#change to True when running it by itself
-if False:
-    #initial state
-    X0=np.array([0.0,2.0,0.0])
-    STRAIGHT = 0 #qID
-    CURVE = 1 #qID
-
-    t0=0
-    tlim=15
-    print 'simulating:'
-    # with initial conditions
-    qID0 = STRAIGHT
-    simResult = h.sim(qID0,X0,h.q[qID0].u,t0,tlim,debug_flag = True)
-    simResult.phasePlot([0,1])
-    simResult.simPlot()
-
-    raw_input('\n Press ENTER to finish program and close plots')
 
