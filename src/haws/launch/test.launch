@@ -1,28 +1,23 @@
 <launch>
   <node
-    pkg="joy"
-    type="joy_node"
+    pkg="haws"
+    type="ros_test_input.py"
     name="Human_Input"
     required="true"
   />
   <node
-    pkg="haws"
-    type="joy2turtle.py"
-    name="Input_Formatting"
-  />
-  <node
 	pkg="haws"
-	type="robotic_agent.py"
+	type="ros_robotic_agent.py"
 	name="Robotic_Agent"
   />
   <node
     pkg="haws"
-    type="gui.py"
+    type="ros_gui.py"
     name="Gui"
   />
   <node
 	pkg="haws"
-	type="dift.py"
+	type="ros_dift.py"
 	name="Dift"
   />
 </launch>

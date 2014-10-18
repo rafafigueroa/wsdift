@@ -101,12 +101,16 @@ class H:
 class Q:
 
     def  __init__(self,qID,f,u,E,
-                  Init=True, Dom = lambda X:True, Avoid = lambda X:False ,TC=True):
+                  Init_X, Init_q,
+                  Dom = lambda X:True,
+                  Avoid = lambda X:False ,
+                  TC=True):
         self.qID = qID
         self.f = f
         self.u = u
         self.E = E
-        self.Init = Init
+        self.Init_X = Init_X
+        self.Init_q = Init_q
         self.Dom = Dom
         self.Avoid = Avoid
         self.TC = TC

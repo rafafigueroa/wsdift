@@ -1,0 +1,18 @@
+<launch>
+  <node
+    pkg="haws"
+    type="ros_test_input.py"
+    name="Human_Input"
+    required="true"
+  />
+  <node
+	pkg="haws"
+	type="ros_robotic_agent.py"
+	name="Robotic_Agent"
+  />
+  <node
+	pkg="haws"
+	type="ros_discrete_state_tracker.py"
+	name="Discrete_Event_Tracker"
+  />
+</launch>
