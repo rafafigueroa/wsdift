@@ -35,7 +35,8 @@ ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/haws/msg" TYPE FILE FILES
     "/home/rafa/wsdift/src/haws/msg/Tags.msg"
-    "/home/rafa/wsdift/src/haws/msg/Pose.msg"
+    "/home/rafa/wsdift/src/haws/msg/Conflict.msg"
+    "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

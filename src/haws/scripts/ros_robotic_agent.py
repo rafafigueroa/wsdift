@@ -16,8 +16,10 @@ sin = np.sin
 cos = np.cos
 pi = np.pi
 
-x = 0.0
-y = 0.0
+# Robotic Agent Initial Conditions
+
+x = -1.0
+y = 1.0
 h = 0.0 #Theta
 v = 0.0 #Linear Velocity
 w = 0.0 #Angular Velocity (Omega)
@@ -40,7 +42,7 @@ def start():
     #ROS setup
     pub = rospy.Publisher('turtle1/pose', PoseStamped, queue_size = 1000)
     rospy.Subscriber('turtle1/cmd_vel', Twist, tw_callback)
-    rospy.init_node('tsim')
+    rospy.init_node('Robotic_Agent')
     r = rospy.Rate(100)
 
     #ROS main loop

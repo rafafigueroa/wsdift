@@ -48,7 +48,6 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
-#include <haws/Pose.h>
 
 namespace haws
 {
@@ -58,31 +57,16 @@ struct Tags_
   typedef Tags_<ContainerAllocator> Type;
 
   Tags_()
-    : do_nothing(0)
-    , do_inputs(0)
-    , do_current(0)
-    , path_current()  {
+    : tags()  {
     }
   Tags_(const ContainerAllocator& _alloc)
-    : do_nothing(0)
-    , do_inputs(0)
-    , do_current(0)
-    , path_current(_alloc)  {
+    : tags(_alloc)  {
     }
 
 
 
-   typedef uint8_t _do_nothing_type;
-  _do_nothing_type do_nothing;
-
-   typedef uint8_t _do_inputs_type;
-  _do_inputs_type do_inputs;
-
-   typedef uint8_t _do_current_type;
-  _do_current_type do_current;
-
-   typedef std::vector< ::haws::Pose_<ContainerAllocator> , typename ContainerAllocator::template rebind< ::haws::Pose_<ContainerAllocator> >::other >  _path_current_type;
-  _path_current_type path_current;
+   typedef std::vector<double, typename ContainerAllocator::template rebind<double>::other >  _tags_type;
+  _tags_type tags;
 
 
 
@@ -161,12 +145,12 @@ struct MD5Sum< ::haws::Tags_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "6d844e42d2aea2ef03da0c40d877b30f";
+    return "6937f05c43a3e459f7b8798e0b6d335d";
   }
 
   static const char* value(const ::haws::Tags_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x6d844e42d2aea2efULL;
-  static const uint64_t static_value2 = 0x03da0c40d877b30fULL;
+  static const uint64_t static_value1 = 0x6937f05c43a3e459ULL;
+  static const uint64_t static_value2 = 0xf7b8798e0b6d335dULL;
 };
 
 template<class ContainerAllocator>
@@ -185,20 +169,7 @@ struct Definition< ::haws::Tags_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "uint8 do_nothing\n\
-uint8 do_inputs\n\
-uint8 do_current\n\
-haws/Pose[] path_current\n\
-	\n\
-\n\
-================================================================================\n\
-MSG: haws/Pose\n\
-float32 x\n\
-float32 y\n\
-float32 theta\n\
-\n\
-float32 linear_velocity\n\
-float32 angular_velocity\n\
+    return "float64[] tags\n\
 ";
   }
 
@@ -217,10 +188,7 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.do_nothing);
-      stream.next(m.do_inputs);
-      stream.next(m.do_current);
-      stream.next(m.path_current);
+      stream.next(m.tags);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -239,19 +207,11 @@ struct Printer< ::haws::Tags_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::haws::Tags_<ContainerAllocator>& v)
   {
-    s << indent << "do_nothing: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.do_nothing);
-    s << indent << "do_inputs: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.do_inputs);
-    s << indent << "do_current: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.do_current);
-    s << indent << "path_current[]" << std::endl;
-    for (size_t i = 0; i < v.path_current.size(); ++i)
+    s << indent << "tags[]" << std::endl;
+    for (size_t i = 0; i < v.tags.size(); ++i)
     {
-      s << indent << "  path_current[" << i << "]: ";
-      s << std::endl;
-      s << indent;
-      Printer< ::haws::Pose_<ContainerAllocator> >::stream(s, indent + "    ", v.path_current[i]);
+      s << indent << "  tags[" << i << "]: ";
+      Printer<double>::stream(s, indent + "  ", v.tags[i]);
     }
   }
 };

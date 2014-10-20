@@ -39,7 +39,7 @@ class WarningSystem(object):
     def __init__(self):
         self.spurious = np.array([[0.1,1],[0.1,0.1]])
 
-# Intializes everything
+# Initializes everything
 def start():
     global x,y,h,v,w
     global STRAIGHT, CURVE, FUTURE, ALARM
@@ -139,20 +139,6 @@ def start():
 
         r.sleep()
 
-def plot_normal_distribution():
-    import matplotlib.pyplot as plt
-    fig = plt.figure()
-
-    x_plot = np.linspace(-5, 5, 200)
-    y_plot = []
-
-    for x in x_plot:
-        y_plot.append(normal_pdf(x, 0.2, 1))
-
-    plt.plot(x_plot, y_plot)
-    ax = fig.add_subplot(111)
-    plt.grid(True)
-    plt.show()
 
 if __name__ == '__main__':
     start()

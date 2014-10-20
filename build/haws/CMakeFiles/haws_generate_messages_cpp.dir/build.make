@@ -46,26 +46,34 @@ CMAKE_BINARY_DIR = /home/rafa/wsdift/build
 include haws/CMakeFiles/haws_generate_messages_cpp.dir/progress.make
 
 haws/CMakeFiles/haws_generate_messages_cpp: /home/rafa/wsdift/devel/include/haws/Tags.h
-haws/CMakeFiles/haws_generate_messages_cpp: /home/rafa/wsdift/devel/include/haws/Pose.h
+haws/CMakeFiles/haws_generate_messages_cpp: /home/rafa/wsdift/devel/include/haws/Warning_Levels.h
+haws/CMakeFiles/haws_generate_messages_cpp: /home/rafa/wsdift/devel/include/haws/Conflict.h
 
 /home/rafa/wsdift/devel/include/haws/Tags.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 /home/rafa/wsdift/devel/include/haws/Tags.h: /home/rafa/wsdift/src/haws/msg/Tags.msg
-/home/rafa/wsdift/devel/include/haws/Tags.h: /home/rafa/wsdift/src/haws/msg/Pose.msg
 /home/rafa/wsdift/devel/include/haws/Tags.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from haws/Tags.msg"
 	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/rafa/wsdift/src/haws/msg/Tags.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/include/haws -e /opt/ros/indigo/share/gencpp/cmake/..
 
-/home/rafa/wsdift/devel/include/haws/Pose.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
-/home/rafa/wsdift/devel/include/haws/Pose.h: /home/rafa/wsdift/src/haws/msg/Pose.msg
-/home/rafa/wsdift/devel/include/haws/Pose.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
+/home/rafa/wsdift/devel/include/haws/Warning_Levels.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
+/home/rafa/wsdift/devel/include/haws/Warning_Levels.h: /home/rafa/wsdift/src/haws/msg/Warning_Levels.msg
+/home/rafa/wsdift/devel/include/haws/Warning_Levels.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from haws/Pose.msg"
-	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/rafa/wsdift/src/haws/msg/Pose.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/include/haws -e /opt/ros/indigo/share/gencpp/cmake/..
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from haws/Warning_Levels.msg"
+	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/rafa/wsdift/src/haws/msg/Warning_Levels.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/include/haws -e /opt/ros/indigo/share/gencpp/cmake/..
+
+/home/rafa/wsdift/devel/include/haws/Conflict.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
+/home/rafa/wsdift/devel/include/haws/Conflict.h: /home/rafa/wsdift/src/haws/msg/Conflict.msg
+/home/rafa/wsdift/devel/include/haws/Conflict.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from haws/Conflict.msg"
+	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/rafa/wsdift/src/haws/msg/Conflict.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/include/haws -e /opt/ros/indigo/share/gencpp/cmake/..
 
 haws_generate_messages_cpp: haws/CMakeFiles/haws_generate_messages_cpp
 haws_generate_messages_cpp: /home/rafa/wsdift/devel/include/haws/Tags.h
-haws_generate_messages_cpp: /home/rafa/wsdift/devel/include/haws/Pose.h
+haws_generate_messages_cpp: /home/rafa/wsdift/devel/include/haws/Warning_Levels.h
+haws_generate_messages_cpp: /home/rafa/wsdift/devel/include/haws/Conflict.h
 haws_generate_messages_cpp: haws/CMakeFiles/haws_generate_messages_cpp.dir/build.make
 .PHONY : haws_generate_messages_cpp
 

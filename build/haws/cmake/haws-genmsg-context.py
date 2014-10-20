@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/rafa/wsdift/src/haws/msg/Tags.msg;/home/rafa/wsdift/src/haws/msg/Pose.msg"
+messages_str = "/home/rafa/wsdift/src/haws/msg/Tags.msg;/home/rafa/wsdift/src/haws/msg/Conflict.msg;/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg"
 services_str = ""
 pkg_name = "haws"
 dependencies_str = "std_msgs;geometry_msgs;nav_msgs"

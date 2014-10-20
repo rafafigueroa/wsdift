@@ -22,7 +22,7 @@ def start():
 
         tw = Twist()
         tw.linear.x = 0.5
-        tw.angular.z = np.sin(now)
+        tw.angular.z = 0.0
         pub.publish(tw)
 
 

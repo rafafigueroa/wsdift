@@ -46,32 +46,40 @@ CMAKE_BINARY_DIR = /home/rafa/wsdift/build
 include haws/CMakeFiles/haws_generate_messages_py.dir/progress.make
 
 haws/CMakeFiles/haws_generate_messages_py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Tags.py
-haws/CMakeFiles/haws_generate_messages_py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Pose.py
+haws/CMakeFiles/haws_generate_messages_py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Warning_Levels.py
+haws/CMakeFiles/haws_generate_messages_py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Conflict.py
 haws/CMakeFiles/haws_generate_messages_py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/__init__.py
 
 /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Tags.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Tags.py: /home/rafa/wsdift/src/haws/msg/Tags.msg
-/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Tags.py: /home/rafa/wsdift/src/haws/msg/Pose.msg
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG haws/Tags"
 	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/rafa/wsdift/src/haws/msg/Tags.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg
 
-/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Pose.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
-/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Pose.py: /home/rafa/wsdift/src/haws/msg/Pose.msg
+/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Warning_Levels.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Warning_Levels.py: /home/rafa/wsdift/src/haws/msg/Warning_Levels.msg
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG haws/Pose"
-	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/rafa/wsdift/src/haws/msg/Pose.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG haws/Warning_Levels"
+	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/rafa/wsdift/src/haws/msg/Warning_Levels.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg
+
+/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Conflict.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Conflict.py: /home/rafa/wsdift/src/haws/msg/Conflict.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG haws/Conflict"
+	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/rafa/wsdift/src/haws/msg/Conflict.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg
 
 /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/__init__.py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Tags.py
-/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/__init__.py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Pose.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_3)
+/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/__init__.py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Warning_Levels.py
+/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/__init__.py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Conflict.py
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python msg __init__.py for haws"
 	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg --initpy
 
 haws_generate_messages_py: haws/CMakeFiles/haws_generate_messages_py
 haws_generate_messages_py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Tags.py
-haws_generate_messages_py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Pose.py
+haws_generate_messages_py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Warning_Levels.py
+haws_generate_messages_py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Conflict.py
 haws_generate_messages_py: /home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/__init__.py
 haws_generate_messages_py: haws/CMakeFiles/haws_generate_messages_py.dir/build.make
 .PHONY : haws_generate_messages_py

@@ -262,8 +262,9 @@ haws/all: haws/CMakeFiles/haws_generate_messages.dir/all
 .PHONY : haws/all
 
 # Convenience name for "clean" pass in the directory.
-haws/clean: haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/clean
+haws/clean: haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/clean
 haws/clean: haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/clean
+haws/clean: haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/clean
 haws/clean: haws/CMakeFiles/actionlib_generate_messages_cpp.dir/clean
 haws/clean: haws/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
 haws/clean: haws/CMakeFiles/actionlib_generate_messages_py.dir/clean
@@ -314,34 +315,34 @@ haws/preinstall:
 .PHONY : haws/preinstall
 
 #=============================================================================
-# Target rules for target haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir
+# Target rules for target haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir
 
 # All Build rule for target.
-haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/all:
-	$(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/depend
-	$(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/build
+haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/all:
+	$(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/depend
+	$(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles 
-	@echo "Built target _haws_generate_messages_check_deps_Pose"
-.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/all
+	@echo "Built target _haws_generate_messages_check_deps_Conflict"
+.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/all
 
 # Build rule for subdir invocation for target.
-haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/rule: cmake_check_build_system
+haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
-.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/rule
+.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/rule
 
 # Convenience name for target.
-_haws_generate_messages_check_deps_Pose: haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/rule
-.PHONY : _haws_generate_messages_check_deps_Pose
+_haws_generate_messages_check_deps_Conflict: haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/rule
+.PHONY : _haws_generate_messages_check_deps_Conflict
 
 # clean rule for target.
-haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/clean:
-	$(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/clean
-.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/clean
+haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/clean:
+	$(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/clean
+.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/clean
 
 # clean rule for target.
-clean: haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/clean
+clean: haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -373,6 +374,37 @@ haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/clean:
 
 # clean rule for target.
 clean: haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir
+
+# All Build rule for target.
+haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/all:
+	$(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/depend
+	$(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles 
+	@echo "Built target _haws_generate_messages_check_deps_Warning_Levels"
+.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/all
+
+# Build rule for subdir invocation for target.
+haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
+.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/rule
+
+# Convenience name for target.
+_haws_generate_messages_check_deps_Warning_Levels: haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/rule
+.PHONY : _haws_generate_messages_check_deps_Warning_Levels
+
+# clean rule for target.
+haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/clean:
+	$(MAKE) -f haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/build.make haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/clean
+.PHONY : haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/clean
+
+# clean rule for target.
+clean: haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -667,7 +699,7 @@ haws/CMakeFiles/haws_gencpp.dir/all: haws/CMakeFiles/haws_generate_messages_cpp.
 
 # Build rule for subdir invocation for target.
 haws/CMakeFiles/haws_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
 .PHONY : haws/CMakeFiles/haws_gencpp.dir/rule
@@ -704,7 +736,7 @@ all: haws/CMakeFiles/haws_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 haws/CMakeFiles/haws_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
 .PHONY : haws/CMakeFiles/haws_generate_messages.dir/rule
@@ -726,20 +758,21 @@ clean: haws/CMakeFiles/haws_generate_messages.dir/clean
 # Target rules for target haws/CMakeFiles/haws_generate_messages_cpp.dir
 
 # All Build rule for target.
-haws/CMakeFiles/haws_generate_messages_cpp.dir/all: haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 haws/CMakeFiles/haws_generate_messages_cpp.dir/all: haws/CMakeFiles/nav_msgs_generate_messages_cpp.dir/all
+haws/CMakeFiles/haws_generate_messages_cpp.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/all
+haws/CMakeFiles/haws_generate_messages_cpp.dir/all: haws/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 haws/CMakeFiles/haws_generate_messages_cpp.dir/all: haws/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-haws/CMakeFiles/haws_generate_messages_cpp.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/all
+haws/CMakeFiles/haws_generate_messages_cpp.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/all
 haws/CMakeFiles/haws_generate_messages_cpp.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/all
 	$(MAKE) -f haws/CMakeFiles/haws_generate_messages_cpp.dir/build.make haws/CMakeFiles/haws_generate_messages_cpp.dir/depend
 	$(MAKE) -f haws/CMakeFiles/haws_generate_messages_cpp.dir/build.make haws/CMakeFiles/haws_generate_messages_cpp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles  3 4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles  3 4 5
 	@echo "Built target haws_generate_messages_cpp"
 .PHONY : haws/CMakeFiles/haws_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 haws/CMakeFiles/haws_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
 .PHONY : haws/CMakeFiles/haws_generate_messages_cpp.dir/rule
@@ -761,20 +794,21 @@ clean: haws/CMakeFiles/haws_generate_messages_cpp.dir/clean
 # Target rules for target haws/CMakeFiles/haws_generate_messages_lisp.dir
 
 # All Build rule for target.
+haws/CMakeFiles/haws_generate_messages_lisp.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/all
 haws/CMakeFiles/haws_generate_messages_lisp.dir/all: haws/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-haws/CMakeFiles/haws_generate_messages_lisp.dir/all: haws/CMakeFiles/nav_msgs_generate_messages_lisp.dir/all
 haws/CMakeFiles/haws_generate_messages_lisp.dir/all: haws/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-haws/CMakeFiles/haws_generate_messages_lisp.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/all
+haws/CMakeFiles/haws_generate_messages_lisp.dir/all: haws/CMakeFiles/nav_msgs_generate_messages_lisp.dir/all
+haws/CMakeFiles/haws_generate_messages_lisp.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/all
 haws/CMakeFiles/haws_generate_messages_lisp.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/all
 	$(MAKE) -f haws/CMakeFiles/haws_generate_messages_lisp.dir/build.make haws/CMakeFiles/haws_generate_messages_lisp.dir/depend
 	$(MAKE) -f haws/CMakeFiles/haws_generate_messages_lisp.dir/build.make haws/CMakeFiles/haws_generate_messages_lisp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles  5 6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles  6 7 8
 	@echo "Built target haws_generate_messages_lisp"
 .PHONY : haws/CMakeFiles/haws_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 haws/CMakeFiles/haws_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
 .PHONY : haws/CMakeFiles/haws_generate_messages_lisp.dir/rule
@@ -796,20 +830,21 @@ clean: haws/CMakeFiles/haws_generate_messages_lisp.dir/clean
 # Target rules for target haws/CMakeFiles/haws_generate_messages_py.dir
 
 # All Build rule for target.
+haws/CMakeFiles/haws_generate_messages_py.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Conflict.dir/all
+haws/CMakeFiles/haws_generate_messages_py.dir/all: haws/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
 haws/CMakeFiles/haws_generate_messages_py.dir/all: haws/CMakeFiles/nav_msgs_generate_messages_py.dir/all
 haws/CMakeFiles/haws_generate_messages_py.dir/all: haws/CMakeFiles/std_msgs_generate_messages_py.dir/all
-haws/CMakeFiles/haws_generate_messages_py.dir/all: haws/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-haws/CMakeFiles/haws_generate_messages_py.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Pose.dir/all
+haws/CMakeFiles/haws_generate_messages_py.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Warning_Levels.dir/all
 haws/CMakeFiles/haws_generate_messages_py.dir/all: haws/CMakeFiles/_haws_generate_messages_check_deps_Tags.dir/all
 	$(MAKE) -f haws/CMakeFiles/haws_generate_messages_py.dir/build.make haws/CMakeFiles/haws_generate_messages_py.dir/depend
 	$(MAKE) -f haws/CMakeFiles/haws_generate_messages_py.dir/build.make haws/CMakeFiles/haws_generate_messages_py.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles  7 8 9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles  9 10 11 12
 	@echo "Built target haws_generate_messages_py"
 .PHONY : haws/CMakeFiles/haws_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 haws/CMakeFiles/haws_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
 .PHONY : haws/CMakeFiles/haws_generate_messages_py.dir/rule
@@ -840,7 +875,7 @@ haws/CMakeFiles/haws_genlisp.dir/all: haws/CMakeFiles/haws_generate_messages_lis
 
 # Build rule for subdir invocation for target.
 haws/CMakeFiles/haws_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
 .PHONY : haws/CMakeFiles/haws_genlisp.dir/rule
@@ -871,7 +906,7 @@ haws/CMakeFiles/haws_genpy.dir/all: haws/CMakeFiles/haws_generate_messages_py.di
 
 # Build rule for subdir invocation for target.
 haws/CMakeFiles/haws_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafa/wsdift/build/CMakeFiles 0
 .PHONY : haws/CMakeFiles/haws_genpy.dir/rule

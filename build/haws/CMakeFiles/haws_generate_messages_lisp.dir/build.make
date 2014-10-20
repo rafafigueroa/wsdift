@@ -46,24 +46,31 @@ CMAKE_BINARY_DIR = /home/rafa/wsdift/build
 include haws/CMakeFiles/haws_generate_messages_lisp.dir/progress.make
 
 haws/CMakeFiles/haws_generate_messages_lisp: /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Tags.lisp
-haws/CMakeFiles/haws_generate_messages_lisp: /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Pose.lisp
+haws/CMakeFiles/haws_generate_messages_lisp: /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Warning_Levels.lisp
+haws/CMakeFiles/haws_generate_messages_lisp: /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Conflict.lisp
 
 /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Tags.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
 /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Tags.lisp: /home/rafa/wsdift/src/haws/msg/Tags.msg
-/home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Tags.lisp: /home/rafa/wsdift/src/haws/msg/Pose.msg
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from haws/Tags.msg"
 	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/rafa/wsdift/src/haws/msg/Tags.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg
 
-/home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Pose.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
-/home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Pose.lisp: /home/rafa/wsdift/src/haws/msg/Pose.msg
+/home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Warning_Levels.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
+/home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Warning_Levels.lisp: /home/rafa/wsdift/src/haws/msg/Warning_Levels.msg
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from haws/Pose.msg"
-	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/rafa/wsdift/src/haws/msg/Pose.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from haws/Warning_Levels.msg"
+	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/rafa/wsdift/src/haws/msg/Warning_Levels.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg
+
+/home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Conflict.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
+/home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Conflict.lisp: /home/rafa/wsdift/src/haws/msg/Conflict.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rafa/wsdift/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from haws/Conflict.msg"
+	cd /home/rafa/wsdift/build/haws && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/rafa/wsdift/src/haws/msg/Conflict.msg -Ihaws:/home/rafa/wsdift/src/haws/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -p haws -o /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg
 
 haws_generate_messages_lisp: haws/CMakeFiles/haws_generate_messages_lisp
 haws_generate_messages_lisp: /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Tags.lisp
-haws_generate_messages_lisp: /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Pose.lisp
+haws_generate_messages_lisp: /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Warning_Levels.lisp
+haws_generate_messages_lisp: /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Conflict.lisp
 haws_generate_messages_lisp: haws/CMakeFiles/haws_generate_messages_lisp.dir/build.make
 .PHONY : haws_generate_messages_lisp
 

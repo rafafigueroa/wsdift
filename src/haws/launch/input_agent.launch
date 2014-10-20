@@ -12,7 +12,33 @@
   />
   <node
 	pkg="haws"
-	type="ros_discrete_state_tracker.py"
-	name="Discrete_Event_Tracker"
+	type="ros_mode_tracker.py"
+	name="Mode_Tracker"
+  />
+  <node
+	pkg="haws"
+	type="ros_dift.py"
+	name="Dift"
+  />
+  <node
+	pkg="haws"
+	type="ros_trajectory_prediction.py"
+	name="Trajectory_Prediction"
+  />
+  <node
+	pkg="haws"
+	type="ros_gui.py"
+	name="Gui"
+  />
+  <node
+	pkg="haws"
+	type="ros_warning_system.py"
+	name="Warning_System"
+	output="screen"
+  />
+  <node
+	pkg="haws"
+	type="ros_logger.py"
+	name="Haws_Logger"
   />
 </launch>

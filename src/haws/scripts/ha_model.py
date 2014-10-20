@@ -74,8 +74,9 @@ def g0(X):
     y=X[1]
     h=X[2] #theta
 
-    return (x>TRACK_LIMIT_X and y>0) \
-           or (x<-TRACK_LIMIT_X and y<0)
+    #return (x>TRACK_LIMIT_X and y>0) \
+    #       or (x<-TRACK_LIMIT_X and y<0)
+    return x>=TRACK_LIMIT_X or x<=-TRACK_LIMIT_X
 
 def g1(X):
     'Start straight'
@@ -83,8 +84,9 @@ def g1(X):
     y=X[1]
     h=X[2] #theta
 
-    return (x>-TRACK_LIMIT_X and x<0 and y>0) or \
-        (x<TRACK_LIMIT_X and x>0 and y<0)
+    # return (x>-TRACK_LIMIT_X and x<0 and y>0) or \
+    #    (x<TRACK_LIMIT_X and x>0 and y<0)
+    return x<TRACK_LIMIT_X and x>-TRACK_LIMIT_X
 
 def avoid(X):
     'True when inside the avoid set'
@@ -92,8 +94,8 @@ def avoid(X):
     y=X[1]
     h=X[2] #theta
 
-    return not (x> -(TRACK_LIMIT_X+1) and \
-                x< (TRACK_LIMIT_X+1) and \
+    return not (x> -(TRACK_LIMIT_X+2) and \
+                x< (TRACK_LIMIT_X+2) and \
                 y> -(TRACK_LIMIT_Y+1)and \
                 y< (TRACK_LIMIT_Y+1))
 
@@ -102,11 +104,18 @@ def avoid(X):
 e0=E([1],[g0],[idem])
 e1=E([0],[g1],[idem])
 
+# Initial
+#initial state
+STRAIGHT = 0 #qID
+CURVE = 1 #qID
+Init_X = np.array([0.0,0.5,0.0])
+Init_qID = STRAIGHT
+
 #discrete states
-q0=Q(0,f0,u0,e0,Dom=any,Avoid=avoid) #straight
-q1=Q(1,f1,u1,e1,Dom=any,Avoid=avoid) #curve
+q0=Q(0, f0, u0, e0, Dom=any,Avoid=avoid) #straight
+q1=Q(1, f1, u1, e1, Dom=any,Avoid=avoid) #curve
 
 #hybrid automata (continuous dynamics)
-h=H([q0,q1],1)
+h=H([q0,q1], Init_X=Init_X, Init_qID=Init_qID, states=1)
 
 

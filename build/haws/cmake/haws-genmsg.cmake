@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "haws: 2 messages, 0 services")
+message(STATUS "haws: 3 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ihaws:/home/rafa/wsdift/src/haws/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg;-Inav_msgs:/opt/ros/indigo/share/nav_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg")
 
@@ -17,12 +17,17 @@ add_custom_target(haws_generate_messages ALL)
 
 get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Tags.msg" NAME_WE)
 add_custom_target(_haws_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "haws" "/home/rafa/wsdift/src/haws/msg/Tags.msg" "haws/Pose"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "haws" "/home/rafa/wsdift/src/haws/msg/Tags.msg" ""
 )
 
-get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Pose.msg" NAME_WE)
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg" NAME_WE)
 add_custom_target(_haws_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "haws" "/home/rafa/wsdift/src/haws/msg/Pose.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "haws" "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg" ""
+)
+
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Conflict.msg" NAME_WE)
+add_custom_target(_haws_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "haws" "/home/rafa/wsdift/src/haws/msg/Conflict.msg" ""
 )
 
 #
@@ -34,11 +39,17 @@ add_custom_target(_haws_generate_messages_check_deps_${_filename}
 _generate_msg_cpp(haws
   "/home/rafa/wsdift/src/haws/msg/Tags.msg"
   "${MSG_I_FLAGS}"
-  "/home/rafa/wsdift/src/haws/msg/Pose.msg"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/haws
 )
 _generate_msg_cpp(haws
-  "/home/rafa/wsdift/src/haws/msg/Pose.msg"
+  "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/haws
+)
+_generate_msg_cpp(haws
+  "/home/rafa/wsdift/src/haws/msg/Conflict.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/haws
@@ -60,7 +71,9 @@ add_dependencies(haws_generate_messages haws_generate_messages_cpp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Tags.msg" NAME_WE)
 add_dependencies(haws_generate_messages_cpp _haws_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Pose.msg" NAME_WE)
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg" NAME_WE)
+add_dependencies(haws_generate_messages_cpp _haws_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Conflict.msg" NAME_WE)
 add_dependencies(haws_generate_messages_cpp _haws_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -75,11 +88,17 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS haws_generate_messages_cpp)
 _generate_msg_lisp(haws
   "/home/rafa/wsdift/src/haws/msg/Tags.msg"
   "${MSG_I_FLAGS}"
-  "/home/rafa/wsdift/src/haws/msg/Pose.msg"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/haws
 )
 _generate_msg_lisp(haws
-  "/home/rafa/wsdift/src/haws/msg/Pose.msg"
+  "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/haws
+)
+_generate_msg_lisp(haws
+  "/home/rafa/wsdift/src/haws/msg/Conflict.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/haws
@@ -101,7 +120,9 @@ add_dependencies(haws_generate_messages haws_generate_messages_lisp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Tags.msg" NAME_WE)
 add_dependencies(haws_generate_messages_lisp _haws_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Pose.msg" NAME_WE)
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg" NAME_WE)
+add_dependencies(haws_generate_messages_lisp _haws_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Conflict.msg" NAME_WE)
 add_dependencies(haws_generate_messages_lisp _haws_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -116,11 +137,17 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS haws_generate_messages_lisp)
 _generate_msg_py(haws
   "/home/rafa/wsdift/src/haws/msg/Tags.msg"
   "${MSG_I_FLAGS}"
-  "/home/rafa/wsdift/src/haws/msg/Pose.msg"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/haws
 )
 _generate_msg_py(haws
-  "/home/rafa/wsdift/src/haws/msg/Pose.msg"
+  "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/haws
+)
+_generate_msg_py(haws
+  "/home/rafa/wsdift/src/haws/msg/Conflict.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/haws
@@ -142,7 +169,9 @@ add_dependencies(haws_generate_messages haws_generate_messages_py)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Tags.msg" NAME_WE)
 add_dependencies(haws_generate_messages_py _haws_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Pose.msg" NAME_WE)
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg" NAME_WE)
+add_dependencies(haws_generate_messages_py _haws_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Conflict.msg" NAME_WE)
 add_dependencies(haws_generate_messages_py _haws_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

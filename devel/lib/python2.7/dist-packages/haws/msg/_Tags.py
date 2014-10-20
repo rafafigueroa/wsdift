@@ -4,30 +4,16 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
-import haws.msg
 
 class Tags(genpy.Message):
-  _md5sum = "6d844e42d2aea2ef03da0c40d877b30f"
+  _md5sum = "6937f05c43a3e459f7b8798e0b6d335d"
   _type = "haws/Tags"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """uint8 do_nothing
-uint8 do_inputs
-uint8 do_current
-haws/Pose[] path_current
-	
-
-================================================================================
-MSG: haws/Pose
-float32 x
-float32 y
-float32 theta
-
-float32 linear_velocity
-float32 angular_velocity
+  _full_text = """float64[] tags
 
 """
-  __slots__ = ['do_nothing','do_inputs','do_current','path_current']
-  _slot_types = ['uint8','uint8','uint8','haws/Pose[]']
+  __slots__ = ['tags']
+  _slot_types = ['float64[]']
 
   def __init__(self, *args, **kwds):
     """
@@ -37,7 +23,7 @@ float32 angular_velocity
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       do_nothing,do_inputs,do_current,path_current
+       tags
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -46,19 +32,10 @@ float32 angular_velocity
     if args or kwds:
       super(Tags, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.do_nothing is None:
-        self.do_nothing = 0
-      if self.do_inputs is None:
-        self.do_inputs = 0
-      if self.do_current is None:
-        self.do_current = 0
-      if self.path_current is None:
-        self.path_current = []
+      if self.tags is None:
+        self.tags = []
     else:
-      self.do_nothing = 0
-      self.do_inputs = 0
-      self.do_current = 0
-      self.path_current = []
+      self.tags = []
 
   def _get_types(self):
     """
@@ -72,13 +49,10 @@ float32 angular_velocity
     :param buff: buffer, ``StringIO``
     """
     try:
-      _x = self
-      buff.write(_struct_3B.pack(_x.do_nothing, _x.do_inputs, _x.do_current))
-      length = len(self.path_current)
+      length = len(self.tags)
       buff.write(_struct_I.pack(length))
-      for val1 in self.path_current:
-        _x = val1
-        buff.write(_struct_5f.pack(_x.x, _x.y, _x.theta, _x.linear_velocity, _x.angular_velocity))
+      pattern = '<%sd'%length
+      buff.write(struct.pack(pattern, *self.tags))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
@@ -88,24 +62,14 @@ float32 angular_velocity
     :param str: byte array of serialized message, ``str``
     """
     try:
-      if self.path_current is None:
-        self.path_current = None
       end = 0
-      _x = self
-      start = end
-      end += 3
-      (_x.do_nothing, _x.do_inputs, _x.do_current,) = _struct_3B.unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
-      self.path_current = []
-      for i in range(0, length):
-        val1 = haws.msg.Pose()
-        _x = val1
-        start = end
-        end += 20
-        (_x.x, _x.y, _x.theta, _x.linear_velocity, _x.angular_velocity,) = _struct_5f.unpack(str[start:end])
-        self.path_current.append(val1)
+      pattern = '<%sd'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.tags = struct.unpack(pattern, str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -118,13 +82,10 @@ float32 angular_velocity
     :param numpy: numpy python module
     """
     try:
-      _x = self
-      buff.write(_struct_3B.pack(_x.do_nothing, _x.do_inputs, _x.do_current))
-      length = len(self.path_current)
+      length = len(self.tags)
       buff.write(_struct_I.pack(length))
-      for val1 in self.path_current:
-        _x = val1
-        buff.write(_struct_5f.pack(_x.x, _x.y, _x.theta, _x.linear_velocity, _x.angular_velocity))
+      pattern = '<%sd'%length
+      buff.write(self.tags.tostring())
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
@@ -135,28 +96,16 @@ float32 angular_velocity
     :param numpy: numpy python module
     """
     try:
-      if self.path_current is None:
-        self.path_current = None
       end = 0
-      _x = self
-      start = end
-      end += 3
-      (_x.do_nothing, _x.do_inputs, _x.do_current,) = _struct_3B.unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
-      self.path_current = []
-      for i in range(0, length):
-        val1 = haws.msg.Pose()
-        _x = val1
-        start = end
-        end += 20
-        (_x.x, _x.y, _x.theta, _x.linear_velocity, _x.angular_velocity,) = _struct_5f.unpack(str[start:end])
-        self.path_current.append(val1)
+      pattern = '<%sd'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.tags = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=length)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_3B = struct.Struct("<3B")
-_struct_5f = struct.Struct("<5f")

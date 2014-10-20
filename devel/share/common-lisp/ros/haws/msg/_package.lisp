@@ -3,7 +3,9 @@
   (:export
    "<TAGS>"
    "TAGS"
-   "<POSE>"
-   "POSE"
+   "<CONFLICT>"
+   "CONFLICT"
+   "<WARNING_LEVELS>"
+   "WARNING_LEVELS"
   ))
 

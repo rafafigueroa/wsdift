@@ -13,32 +13,38 @@ from geometry_msgs.msg import PoseStamped
 from tf.transformations import euler_from_quaternion
 
 #python imports
-from ha_model import *
-import ha_model
 import numpy as np
 
-#robot pose and twist
-robot_ps = PoseStamped()
-robot_tw = Twist()
+# haws imports
+from ha_model import *
+import ha_model
+import dift_main
 
-FUTURE = 2.0 #time into the future for simulation
-ALERT = 1.0 #time into the future for alert to get into the avoid set
 
-def ps_callback(ps):
-    'PoseStamped callback'
-    global robot_ps
-    robot_ps = ps
+def npdf_00(uID):
+    mu = 0.5
+    var= 1
+    return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
 
-def tw_callback(tw):
-    'Twist Callback'
-    global robot_tw
-    robot_tw = tw
+def npdf_01(uID):
+    mu = 0.5
+    var= 1
+    return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
 
-def create_tags():
-    return 20
+def npdf_10(uID):
+    mu = 0
+    var= 0.1
+    return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
+
+def npdf_11(uID):
+    mu = -1
+    var= 0.2
+    return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
 
 
 def normal_pdf(u, mu, var):
+    mu = float(mu)
+    var = float(var)
     return (1/(np.sqrt(var)*np.sqrt(2.0*np.pi))*np.exp(-(u-mu)**2/(2*var)))
 
 def plot_normal_distribution():
@@ -56,5 +62,6 @@ def plot_normal_distribution():
     plt.grid(True)
     plt.show()
 
-if __name__ == '__main__':
-    start()
+# creation of dift model
+L = [[npdf_00, npdf_01], [npdf_10, npdf_11]]
+dift = dift_main.DiftModel(L)

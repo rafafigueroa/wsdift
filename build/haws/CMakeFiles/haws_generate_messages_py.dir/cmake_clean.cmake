@@ -1,7 +1,8 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/haws_generate_messages_py"
   "/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Tags.py"
-  "/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Pose.py"
+  "/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Warning_Levels.py"
+  "/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/_Conflict.py"
   "/home/rafa/wsdift/devel/lib/python2.7/dist-packages/haws/msg/__init__.py"
 )
 

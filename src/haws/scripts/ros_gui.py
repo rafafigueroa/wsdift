@@ -21,11 +21,10 @@ import pyqtgraph as pg
 #global variables
 
 #robot pose and inputs
-x = 0.0
-y = 0.0
+x = -1.0
+y = 1.0
 h = 0.0 #Theta
 
-#TODO:possiblegeneral
 def ps_callback(ps):
     global x, y, h
     x = ps.pose.position.x
@@ -68,12 +67,12 @@ class GUI_haws(object):
         #Plot widgets and objects
         self.sim_plot_widget = pg.PlotWidget(name = 'sim')
         self.sim_plot = self.sim_plot_widget.plot(title = 'Robot Simulation')
-        self.sim_plot_widget.setRange(QtCore.QRectF(-1, -1, 4, 4))
+        self.sim_plot_widget.setRange(QtCore.QRectF(-5, -5, 10, 10))
 
         self.dift_plot_widget = pg.PlotWidget(name = 'dift')
         self.dift_plot = self.dift_plot_widget.plot( \
             title = 'Information Tracking')
-        self.dift_plot_widget.setRange(QtCore.QRectF(-1,-1,4,4))
+        self.dift_plot_widget.setRange(QtCore.QRectF(-5, -5, 10, 10))
 
         #Layout
         layout = QtGui.QGridLayout()
