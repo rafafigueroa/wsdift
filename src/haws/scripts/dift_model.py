@@ -33,7 +33,7 @@ def npdf_01(uID):
 
 def npdf_10(uID):
     mu = 0
-    var= 0.1
+    var= 0.2
     return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
 
 def npdf_11(uID):

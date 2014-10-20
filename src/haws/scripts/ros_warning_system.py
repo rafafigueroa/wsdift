@@ -33,7 +33,7 @@ class WarningSystem(object):
         self.v = 0.0
 
     def activation_function(self, v):
-        return 1.0/(1.0+np.exp(-1.0*(self.a*v-0.5)))
+        return 1.0/(1.0+np.exp(-1.0*self.a*(v-0.5)))
 
     def nn(self, tags, tc):
         phi = tags[self.uID]
@@ -47,11 +47,11 @@ class WarningSystem(object):
         return y
 
 # warning system model
-m = 0.3
-r = 0.1
-w = 0.3
+m = 0.4
+r = 0.2
+w = 0.4
 tf = 2.0
-a = 6.0
+a = 10.0
 
 ws0 = WarningSystem(0, m, r, w, a, tf)
 ws1 = WarningSystem(1, m, r, w, a, tf)
