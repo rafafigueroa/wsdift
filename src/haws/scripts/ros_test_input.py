@@ -21,7 +21,7 @@ def start():
         print 't:', now
 
         tw = Twist()
-        tw.linear.x = 0.5
+        tw.linear.x = 0.2
         tw.angular.z = 0.0
         pub.publish(tw)
 

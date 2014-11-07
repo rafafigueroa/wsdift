@@ -18,7 +18,7 @@ pi = np.pi
 
 # Robotic Agent Initial Conditions
 
-x = -1.0
+x = 1.0
 y = 1.0
 h = 0.0 #Theta
 v = 0.0 #Linear Velocity

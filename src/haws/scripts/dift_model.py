@@ -22,23 +22,23 @@ import dift_main
 
 
 def npdf_00(uID):
-    mu = 0.5
-    var= 1
+    mu = 0.2
+    var= 0.1
     return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
 
 def npdf_01(uID):
-    mu = 0.5
-    var= 1
+    mu = 0.2
+    var= 0.1
     return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
 
 def npdf_10(uID):
     mu = 0
-    var= 0.2
+    var= 0.1
     return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
 
 def npdf_11(uID):
-    mu = -1
-    var= 0.2
+    mu = -0.2
+    var= 0.05
     return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
 
 

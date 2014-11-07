@@ -21,7 +21,7 @@ import numpy as np
 robot_ps = PoseStamped()
 robot_tw = Twist()
 
-FUTURE = 2.0 #time into the future for simulation
+FUTURE = 4.0 #time into the future for simulation
 ALERT = 1.0 #time into the future for alert to get into the avoid set
 
 def ps_callback(ps):
@@ -33,11 +33,6 @@ def tw_callback(tw):
     'Twist Callback'
     global robot_tw
     robot_tw = tw
-
-
-class WarningSystem(object):
-    def __init__(self):
-        self.spurious = np.array([[0.1,1],[0.1,0.1]])
 
 # Initializes everything
 def start():
@@ -138,7 +133,6 @@ def start():
         pub_paths.publish(path)
 
         r.sleep()
-
 
 if __name__ == '__main__':
     start()

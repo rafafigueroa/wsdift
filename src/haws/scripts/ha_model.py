@@ -108,7 +108,7 @@ e1=E([0],[g1],[idem])
 #initial state
 STRAIGHT = 0 #qID
 CURVE = 1 #qID
-Init_X = np.array([0.0,0.5,0.0])
+Init_X = np.array([1.0,1.0,0.0])
 Init_qID = STRAIGHT
 
 #discrete states

@@ -22,8 +22,8 @@ import ha_model
 #global variables
 
 # robot pose and inputs
-x = 0.0
-y = 0.0
+x = 1.0
+y = 1.0
 h = 0.0 #Theta
 
 def ps_callback(ps):

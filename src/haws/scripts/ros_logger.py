@@ -29,7 +29,7 @@ robot_tw = Twist()
 
 # robot mode
 qID = None
-FUTURE = 2.0 #time into the future for simulation
+FUTURE = 4.0 #time into the future for simulation
 
 def qID_callback(qid):
     global qID
@@ -91,7 +91,7 @@ def start():
     while qID is None:
         pass
 
-    fp = open('/home/rafa/Dropbox/aDift/logs/exp.csv', 'w+')
+    fp = open('/home/rafa/Dropbox/aDift/logs/experiment.csv', 'w+')
     fp.truncate()
 
     t = 0
