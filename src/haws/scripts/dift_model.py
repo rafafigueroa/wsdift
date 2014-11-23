@@ -3,6 +3,7 @@
 """
 @author: Rafael Figueroa
 """
+from __future__ import division
 
 #ROS imports
 import rospy
@@ -20,26 +21,31 @@ from ha_model import *
 import ha_model
 import dift_main
 
+un_md = [[None, None], [None, None]]
+un_md[0][0] = [0.2, 0.1]
+un_md[0][1] = [0.2, 0.1]
+un_md[1][0] = [0.0, 0.1]
+un_md[1][1] = [-0.2, 0.05]
 
-def npdf_00(uID):
+def npdf_00(u):
     mu = 0.2
     var= 0.1
-    return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
+    return normal_pdf(u, mu, var)/normal_pdf(mu, mu, var)
 
-def npdf_01(uID):
+def npdf_01(u):
     mu = 0.2
     var= 0.1
-    return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
+    return normal_pdf(u, mu, var)/normal_pdf(mu, mu, var)
 
-def npdf_10(uID):
+def npdf_10(u):
     mu = 0
     var= 0.1
-    return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
+    return normal_pdf(u, mu, var)/normal_pdf(mu, mu, var)
 
-def npdf_11(uID):
+def npdf_11(u):
     mu = -0.2
     var= 0.05
-    return normal_pdf(uID, mu, var)/normal_pdf(mu, mu, var)
+    return normal_pdf(u, mu, var)/normal_pdf(mu, mu, var)
 
 
 def normal_pdf(u, mu, var):
@@ -64,4 +70,4 @@ def plot_normal_distribution():
 
 # creation of dift model
 L = [[npdf_00, npdf_01], [npdf_10, npdf_11]]
-dift = dift_main.DiftModel(L)
+dift = dift_main.DiftModel(L, un_md)

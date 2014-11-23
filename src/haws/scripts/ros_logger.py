@@ -17,6 +17,8 @@ from haws.msg import Tags
 from haws.msg import Conflict
 from haws.msg import Warning_Levels
 
+import haws_variables
+TEST_INPUT = haws_variables.test_input
 
 #python imports
 from ha_model import *
@@ -91,7 +93,8 @@ def start():
     while qID is None:
         pass
 
-    fp = open('/home/rafa/Dropbox/aDift/logs/experiment.csv', 'w+')
+    fp = open('/home/rafa/Dropbox/aDift/logs/experiment_'
+              + TEST_INPUT + '.csv', 'w+')
     fp.truncate()
 
     t = 0

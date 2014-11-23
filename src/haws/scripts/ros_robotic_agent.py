@@ -18,9 +18,11 @@ pi = np.pi
 
 # Robotic Agent Initial Conditions
 
-x = 1.0
-y = 1.0
-h = 0.0 #Theta
+import haws_variables
+
+x = haws_variables.x0
+y = haws_variables.y0
+h = haws_variables.h0
 v = 0.0 #Linear Velocity
 w = 0.0 #Angular Velocity (Omega)
 

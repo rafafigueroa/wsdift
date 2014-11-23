@@ -4,6 +4,12 @@
 @author: Rafael Figueroa
 """
 
+from __future__ import division
+import haws_variables
+
+TEST_INPUT = haws_variables.test_input
+ALERT = haws_variables.alert
+
 #ROS imports
 import rospy
 from geometry_msgs.msg import Twist
@@ -26,7 +32,7 @@ robot_tw = Twist()
 
 # robot mode
 qID = None
-FUTURE = 4.0 #time into the future for simulation
+FUTURE = 5.0 #time into the future for simulation
 
 def qID_callback(qid):
     global qID
@@ -144,10 +150,16 @@ def start():
         # conflict message
         conflict = Conflict()
         conflict.avoid_activated = avoid_activated
+
         if avoid_activated:
             conflict.tc = timeToAvoid
+            if timeToAvoid > 0:
+                conflict.gamma = ALERT/float(timeToAvoid)
+            else:
+                conflict.gamma = 999.0
         else:
             conflict.tc = 99999.0
+            conflict.gamma = 0.0
 
         pub_tc.publish(conflict)
 

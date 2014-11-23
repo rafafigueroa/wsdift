@@ -28,6 +28,7 @@ qID = None
 #human inputs
 robot_tw = Twist()
 
+
 def tw_callback(tw):
     'Twist Callback'
     global robot_tw
@@ -67,10 +68,10 @@ def start():
 
         # format for this robot
         u = [vx, wz]
-        print 'u:', u
+        #print 'u:', u
         if qID is not None:
             # calculate the tag value for each input
-            print 'qID:', qID
+            #print 'qID:', qID
             tags = dift_model.dift.create_tags(qID, u)
         else:
             tags = [1, 1]

@@ -6,15 +6,16 @@ import struct
 
 
 class Conflict(genpy.Message):
-  _md5sum = "eeb3616bb5a522dd2c0241869fb7b7c6"
+  _md5sum = "01359ce202f254731c57b778944aa8d5"
   _type = "haws/Conflict"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """bool avoid_activated
 float64 tc
+float64 gamma
 
 """
-  __slots__ = ['avoid_activated','tc']
-  _slot_types = ['bool','float64']
+  __slots__ = ['avoid_activated','tc','gamma']
+  _slot_types = ['bool','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -24,7 +25,7 @@ float64 tc
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       avoid_activated,tc
+       avoid_activated,tc,gamma
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -37,9 +38,12 @@ float64 tc
         self.avoid_activated = False
       if self.tc is None:
         self.tc = 0.
+      if self.gamma is None:
+        self.gamma = 0.
     else:
       self.avoid_activated = False
       self.tc = 0.
+      self.gamma = 0.
 
   def _get_types(self):
     """
@@ -54,7 +58,7 @@ float64 tc
     """
     try:
       _x = self
-      buff.write(_struct_Bd.pack(_x.avoid_activated, _x.tc))
+      buff.write(_struct_B2d.pack(_x.avoid_activated, _x.tc, _x.gamma))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
@@ -67,8 +71,8 @@ float64 tc
       end = 0
       _x = self
       start = end
-      end += 9
-      (_x.avoid_activated, _x.tc,) = _struct_Bd.unpack(str[start:end])
+      end += 17
+      (_x.avoid_activated, _x.tc, _x.gamma,) = _struct_B2d.unpack(str[start:end])
       self.avoid_activated = bool(self.avoid_activated)
       return self
     except struct.error as e:
@@ -83,7 +87,7 @@ float64 tc
     """
     try:
       _x = self
-      buff.write(_struct_Bd.pack(_x.avoid_activated, _x.tc))
+      buff.write(_struct_B2d.pack(_x.avoid_activated, _x.tc, _x.gamma))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
@@ -97,12 +101,12 @@ float64 tc
       end = 0
       _x = self
       start = end
-      end += 9
-      (_x.avoid_activated, _x.tc,) = _struct_Bd.unpack(str[start:end])
+      end += 17
+      (_x.avoid_activated, _x.tc, _x.gamma,) = _struct_B2d.unpack(str[start:end])
       self.avoid_activated = bool(self.avoid_activated)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_Bd = struct.Struct("<Bd")
+_struct_B2d = struct.Struct("<B2d")

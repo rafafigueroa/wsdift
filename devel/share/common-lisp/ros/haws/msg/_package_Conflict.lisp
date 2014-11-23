@@ -3,4 +3,6 @@
           AVOID_ACTIVATED
           TC-VAL
           TC
+          GAMMA-VAL
+          GAMMA
 ))

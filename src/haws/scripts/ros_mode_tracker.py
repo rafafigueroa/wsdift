@@ -65,7 +65,6 @@ def start():
         pub.publish(qID)
         r.sleep()
 
-
 # Start Loop
 if __name__ == '__main__':
     start()

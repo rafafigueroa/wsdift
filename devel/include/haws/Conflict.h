@@ -58,11 +58,13 @@ struct Conflict_
 
   Conflict_()
     : avoid_activated(false)
-    , tc(0.0)  {
+    , tc(0.0)
+    , gamma(0.0)  {
     }
   Conflict_(const ContainerAllocator& _alloc)
     : avoid_activated(false)
-    , tc(0.0)  {
+    , tc(0.0)
+    , gamma(0.0)  {
     }
 
 
@@ -72,6 +74,9 @@ struct Conflict_
 
    typedef double _tc_type;
   _tc_type tc;
+
+   typedef double _gamma_type;
+  _gamma_type gamma;
 
 
 
@@ -150,12 +155,12 @@ struct MD5Sum< ::haws::Conflict_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "eeb3616bb5a522dd2c0241869fb7b7c6";
+    return "01359ce202f254731c57b778944aa8d5";
   }
 
   static const char* value(const ::haws::Conflict_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xeeb3616bb5a522ddULL;
-  static const uint64_t static_value2 = 0x2c0241869fb7b7c6ULL;
+  static const uint64_t static_value1 = 0x01359ce202f25473ULL;
+  static const uint64_t static_value2 = 0x1c57b778944aa8d5ULL;
 };
 
 template<class ContainerAllocator>
@@ -176,6 +181,7 @@ struct Definition< ::haws::Conflict_<ContainerAllocator> >
   {
     return "bool avoid_activated\n\
 float64 tc\n\
+float64 gamma\n\
 ";
   }
 
@@ -196,6 +202,7 @@ namespace serialization
     {
       stream.next(m.avoid_activated);
       stream.next(m.tc);
+      stream.next(m.gamma);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -218,6 +225,8 @@ struct Printer< ::haws::Conflict_<ContainerAllocator> >
     Printer<uint8_t>::stream(s, indent + "  ", v.avoid_activated);
     s << indent << "tc: ";
     Printer<double>::stream(s, indent + "  ", v.tc);
+    s << indent << "gamma: ";
+    Printer<double>::stream(s, indent + "  ", v.gamma);
   }
 };
 

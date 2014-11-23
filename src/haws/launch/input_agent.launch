@@ -34,7 +34,6 @@
 	pkg="haws"
 	type="ros_warning_system.py"
 	name="Warning_System"
-	output="screen"
   />
   <node
 	pkg="haws"
