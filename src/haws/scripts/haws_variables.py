@@ -6,7 +6,7 @@
 from __future__ import division
 import numpy as np
 
-test_input = 'circle'
+test_input = 'bump'
 x0 = 0
 y0 = 0
 h0 = 0

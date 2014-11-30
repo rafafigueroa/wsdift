@@ -1,9 +1,14 @@
 <launch>
   <node
-    pkg="haws"
-    type="ros_test_input.py"
-    name="Human_Input"
+    pkg="joy"
+    type="joy_node"
+    name="Joy"
     required="true"
+  />
+  <node
+    pkg="haws"
+    type="joy2turtle.py"
+    name="Joy2Turtle"
   />
   <node
 	pkg="haws"

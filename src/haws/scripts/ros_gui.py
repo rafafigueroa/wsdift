@@ -472,8 +472,8 @@ class GUI_haws(object):
         if tags[0] > 0.1 or tags[1] > 0.1:
             lcolor = 'y'
 
-        if Psi[0] > 0.2 or Psi[1] > 0.2:
-            lcolor = 'r'
+        #if Psi[0] > 0.2 or Psi[1] > 0.2:
+        #    lcolor = 'r'
 
         self.main_plot.setData(x_fpd, y_fpd,
                                clear = True,
