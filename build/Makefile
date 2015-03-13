@@ -423,6 +423,19 @@ haws_generate_messages_cpp/fast:
 .PHONY : haws_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named haws_generate_messages_eus
+
+# Build rule for target.
+haws_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 haws_generate_messages_eus
+.PHONY : haws_generate_messages_eus
+
+# fast build rule for target.
+haws_generate_messages_eus/fast:
+	$(MAKE) -f haws/CMakeFiles/haws_generate_messages_eus.dir/build.make haws/CMakeFiles/haws_generate_messages_eus.dir/build
+.PHONY : haws_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named haws_generate_messages_lisp
 
 # Build rule for target.
@@ -447,6 +460,19 @@ haws_generate_messages_py: cmake_check_build_system
 haws_generate_messages_py/fast:
 	$(MAKE) -f haws/CMakeFiles/haws_generate_messages_py.dir/build.make haws/CMakeFiles/haws_generate_messages_py.dir/build
 .PHONY : haws_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named haws_geneus
+
+# Build rule for target.
+haws_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 haws_geneus
+.PHONY : haws_geneus
+
+# fast build rule for target.
+haws_geneus/fast:
+	$(MAKE) -f haws/CMakeFiles/haws_geneus.dir/build.make haws/CMakeFiles/haws_geneus.dir/build
+.PHONY : haws_geneus/fast
 
 #=============================================================================
 # Target rules for targets named haws_genlisp
@@ -859,8 +885,10 @@ help:
 	@echo "... haws_gencpp"
 	@echo "... haws_generate_messages"
 	@echo "... haws_generate_messages_cpp"
+	@echo "... haws_generate_messages_eus"
 	@echo "... haws_generate_messages_lisp"
 	@echo "... haws_generate_messages_py"
+	@echo "... haws_geneus"
 	@echo "... haws_genlisp"
 	@echo "... haws_genpy"
 	@echo "... nav_msgs_generate_messages_cpp"

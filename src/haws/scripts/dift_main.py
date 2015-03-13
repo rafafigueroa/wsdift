@@ -14,9 +14,9 @@ import ha_model
 import dift_model
 
 class DiftModel(object):
-    # L(uID, qID) = npdfs matrix
-    # npdfs = normalized pdfs
-    # pdfs = probability density functions
+    """L(uID, qID) = npdfs matrix
+    npdfs = normalized pdfs
+    pdfs = probability density functions"""
 
     def __init__(self, L, un_md):
         self.L = L

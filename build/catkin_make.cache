@@ -1,1 +1,2 @@
 haws
+-DCATKIN_DEVEL_PREFIX=/home/rafa/wsdift/devel -DCMAKE_INSTALL_PREFIX=/home/rafa/wsdift/install -G Unix Makefiles

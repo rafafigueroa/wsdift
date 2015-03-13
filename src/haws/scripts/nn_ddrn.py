@@ -405,14 +405,18 @@ class RecurrentNeuronExperiment(object):
 
         scatter(t[ktss], nn_varsigma[ktss], label='tss', s=ssc, facecolors='none',
                 edgecolor = [0.8, 0.01, 0.20])
-        scatter(t[ktse], nn_varsigma[ktse], label='tse', s=ssc, facecolors='none',
+        scatter(t[ktse], nn_varsigma[ktse], label='tse', 
+                s=ssc, facecolors='none',
                 edgecolor = [0.01, 0.8, 0.20])
 
         if ktcs is not None:
-            scatter(t[ktcs], nn_gamma[ktcs], label='tcs', s=msc, facecolors='none',
-                edgecolor = [0.8, 0.01, 0.80])
-            scatter(t[ktce], nn_gamma[ktce], label='tce', s=msc, facecolors='none',
-                edgecolor = [0.01, 0.8, 0.80])
+            scatter(t[ktcs], nn_gamma[ktcs], label='tcs', 
+                    s=msc, facecolors='none',
+                    edgecolor = [0.8, 0.01, 0.80])
+
+            scatter(t[ktce], nn_gamma[ktce], label='tce', 
+                    s=msc, facecolors='none',
+                    edgecolor = [0.01, 0.8, 0.80])
 
         legend()
         ax = fig4.add_subplot(111)

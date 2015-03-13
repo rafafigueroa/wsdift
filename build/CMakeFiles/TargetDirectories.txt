@@ -17,8 +17,10 @@
 /home/rafa/wsdift/build/haws/CMakeFiles/haws_gencpp.dir
 /home/rafa/wsdift/build/haws/CMakeFiles/haws_generate_messages.dir
 /home/rafa/wsdift/build/haws/CMakeFiles/haws_generate_messages_cpp.dir
+/home/rafa/wsdift/build/haws/CMakeFiles/haws_generate_messages_eus.dir
 /home/rafa/wsdift/build/haws/CMakeFiles/haws_generate_messages_lisp.dir
 /home/rafa/wsdift/build/haws/CMakeFiles/haws_generate_messages_py.dir
+/home/rafa/wsdift/build/haws/CMakeFiles/haws_geneus.dir
 /home/rafa/wsdift/build/haws/CMakeFiles/haws_genlisp.dir
 /home/rafa/wsdift/build/haws/CMakeFiles/haws_genpy.dir
 /home/rafa/wsdift/build/haws/CMakeFiles/nav_msgs_generate_messages_cpp.dir

@@ -15,6 +15,10 @@ d3ff9804c71add0dbe83ad3fdee9f7b7 /home/rafa/wsdift/devel/share/common-lisp/ros/h
 95b9831597a7c1315ea69a7e7efa0412 /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Pose.lisp
 bd2a9a732c6f9969cdb548432816470a /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Tags.lisp
 236d3ea74f68d58f1a71061350349f2f /home/rafa/wsdift/devel/share/common-lisp/ros/haws/msg/Warning_Levels.lisp
+2cf914666da7ac6b65a08d23f0adfa87 /home/rafa/wsdift/devel/share/roseus/ros/haws/manifest.l
+b39696240e1945c413dda8c5accce681 /home/rafa/wsdift/devel/share/roseus/ros/haws/msg/Conflict.l
+3cd6587869cb2ab439d0955fbdf187d3 /home/rafa/wsdift/devel/share/roseus/ros/haws/msg/Tags.l
+7dec3a795e53a89447d8916f4b282108 /home/rafa/wsdift/devel/share/roseus/ros/haws/msg/Warning_Levels.l
 d6fdad73f68315d8dd3e6a9fcaea3977 CMakeFiles/clean_test_results
 b6896209ad9aace0861a6c14746ea58b CMakeFiles/doxygen
 b6896209ad9aace0861a6c14746ea58b CMakeFiles/run_tests
@@ -34,8 +38,10 @@ ab7fb43f611c2d6907206f5df780fe64 haws/CMakeFiles/_haws_generate_messages_check_d
 7cd81f3791bf3c5c2af9445ffec9e424 haws/CMakeFiles/haws_gencpp
 7cd81f3791bf3c5c2af9445ffec9e424 haws/CMakeFiles/haws_generate_messages
 7cd81f3791bf3c5c2af9445ffec9e424 haws/CMakeFiles/haws_generate_messages_cpp
+7cd81f3791bf3c5c2af9445ffec9e424 haws/CMakeFiles/haws_generate_messages_eus
 7cd81f3791bf3c5c2af9445ffec9e424 haws/CMakeFiles/haws_generate_messages_lisp
 7cd81f3791bf3c5c2af9445ffec9e424 haws/CMakeFiles/haws_generate_messages_py
+7cd81f3791bf3c5c2af9445ffec9e424 haws/CMakeFiles/haws_geneus
 7cd81f3791bf3c5c2af9445ffec9e424 haws/CMakeFiles/haws_genlisp
 7cd81f3791bf3c5c2af9445ffec9e424 haws/CMakeFiles/haws_genpy
 7cd81f3791bf3c5c2af9445ffec9e424 haws/CMakeFiles/nav_msgs_generate_messages_cpp

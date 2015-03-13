@@ -360,6 +360,20 @@ haws_generate_messages_cpp/fast:
 .PHONY : haws_generate_messages_cpp/fast
 
 # Convenience name for target.
+haws/CMakeFiles/haws_generate_messages_eus.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_generate_messages_eus.dir/rule
+.PHONY : haws/CMakeFiles/haws_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+haws_generate_messages_eus: haws/CMakeFiles/haws_generate_messages_eus.dir/rule
+.PHONY : haws_generate_messages_eus
+
+# fast build rule for target.
+haws_generate_messages_eus/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/haws_generate_messages_eus.dir/build.make haws/CMakeFiles/haws_generate_messages_eus.dir/build
+.PHONY : haws_generate_messages_eus/fast
+
+# Convenience name for target.
 haws/CMakeFiles/haws_generate_messages_lisp.dir/rule:
 	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_generate_messages_lisp.dir/rule
 .PHONY : haws/CMakeFiles/haws_generate_messages_lisp.dir/rule
@@ -386,6 +400,20 @@ haws_generate_messages_py: haws/CMakeFiles/haws_generate_messages_py.dir/rule
 haws_generate_messages_py/fast:
 	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/haws_generate_messages_py.dir/build.make haws/CMakeFiles/haws_generate_messages_py.dir/build
 .PHONY : haws_generate_messages_py/fast
+
+# Convenience name for target.
+haws/CMakeFiles/haws_geneus.dir/rule:
+	cd /home/rafa/wsdift/build && $(MAKE) -f CMakeFiles/Makefile2 haws/CMakeFiles/haws_geneus.dir/rule
+.PHONY : haws/CMakeFiles/haws_geneus.dir/rule
+
+# Convenience name for target.
+haws_geneus: haws/CMakeFiles/haws_geneus.dir/rule
+.PHONY : haws_geneus
+
+# fast build rule for target.
+haws_geneus/fast:
+	cd /home/rafa/wsdift/build && $(MAKE) -f haws/CMakeFiles/haws_geneus.dir/build.make haws/CMakeFiles/haws_geneus.dir/build
+.PHONY : haws_geneus/fast
 
 # Convenience name for target.
 haws/CMakeFiles/haws_genlisp.dir/rule:
@@ -815,8 +843,10 @@ help:
 	@echo "... haws_gencpp"
 	@echo "... haws_generate_messages"
 	@echo "... haws_generate_messages_cpp"
+	@echo "... haws_generate_messages_eus"
 	@echo "... haws_generate_messages_lisp"
 	@echo "... haws_generate_messages_py"
+	@echo "... haws_geneus"
 	@echo "... haws_genlisp"
 	@echo "... haws_genpy"
 	@echo "... install"

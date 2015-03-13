@@ -6,6 +6,7 @@ set(MSG_I_FLAGS "-Ihaws:/home/rafa/wsdift/src/haws/msg;-Istd_msgs:/opt/ros/indig
 
 # Find all generators
 find_package(gencpp REQUIRED)
+find_package(geneus REQUIRED)
 find_package(genlisp REQUIRED)
 find_package(genpy REQUIRED)
 
@@ -31,7 +32,7 @@ add_custom_target(_haws_generate_messages_check_deps_${_filename}
 )
 
 #
-#  langs = gencpp;genlisp;genpy
+#  langs = gencpp;geneus;genlisp;genpy
 #
 
 ### Section generating for lang: gencpp
@@ -82,6 +83,55 @@ add_dependencies(haws_gencpp haws_generate_messages_cpp)
 
 # register target for catkin_package(EXPORTED_TARGETS)
 list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS haws_generate_messages_cpp)
+
+### Section generating for lang: geneus
+### Generating Messages
+_generate_msg_eus(haws
+  "/home/rafa/wsdift/src/haws/msg/Tags.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/haws
+)
+_generate_msg_eus(haws
+  "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/haws
+)
+_generate_msg_eus(haws
+  "/home/rafa/wsdift/src/haws/msg/Conflict.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/haws
+)
+
+### Generating Services
+
+### Generating Module File
+_generate_module_eus(haws
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/haws
+  "${ALL_GEN_OUTPUT_FILES_eus}"
+)
+
+add_custom_target(haws_generate_messages_eus
+  DEPENDS ${ALL_GEN_OUTPUT_FILES_eus}
+)
+add_dependencies(haws_generate_messages haws_generate_messages_eus)
+
+# add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Tags.msg" NAME_WE)
+add_dependencies(haws_generate_messages_eus _haws_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Warning_Levels.msg" NAME_WE)
+add_dependencies(haws_generate_messages_eus _haws_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/rafa/wsdift/src/haws/msg/Conflict.msg" NAME_WE)
+add_dependencies(haws_generate_messages_eus _haws_generate_messages_check_deps_${_filename})
+
+# target for backward compatibility
+add_custom_target(haws_geneus)
+add_dependencies(haws_geneus haws_generate_messages_eus)
+
+# register target for catkin_package(EXPORTED_TARGETS)
+list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS haws_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
@@ -193,6 +243,17 @@ endif()
 add_dependencies(haws_generate_messages_cpp std_msgs_generate_messages_cpp)
 add_dependencies(haws_generate_messages_cpp geometry_msgs_generate_messages_cpp)
 add_dependencies(haws_generate_messages_cpp nav_msgs_generate_messages_cpp)
+
+if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/haws)
+  # install generated code
+  install(
+    DIRECTORY ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/haws
+    DESTINATION ${geneus_INSTALL_DIR}
+  )
+endif()
+add_dependencies(haws_generate_messages_eus std_msgs_generate_messages_eus)
+add_dependencies(haws_generate_messages_eus geometry_msgs_generate_messages_eus)
+add_dependencies(haws_generate_messages_eus nav_msgs_generate_messages_eus)
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/haws)
   # install generated code
